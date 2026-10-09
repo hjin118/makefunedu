@@ -3,6 +3,154 @@ import Card from "../components/Card";
 import CopyButton from "../components/CopyButton";
 import PageHeader from "../components/PageHeader";
 import Tabs from "../components/Tabs";
+import "./GamegenPage.css";
+
+type SlideLine =
+  | { kind: "text"; text: string }
+  | { kind: "marker"; tone: "bad" | "good" | "label"; label: string; text: string };
+
+const THEORY_SLIDES: { title: string; lines: SlideLine[] }[] = [
+  {
+    title: "바이브 코딩: AI와 함께 나만의 앱 만들기",
+    lines: [{ kind: "text", text: "1&2차시: 완벽한 설계도와 마법의 집 짓기" }],
+  },
+  {
+    title: "AI에게 부탁할 땐 '레시피'가 필요해!",
+    lines: [
+      { kind: "text", text: "AI는 우리의 명령이 구체적일수록 똑똑해져요!" },
+      {
+        kind: "marker",
+        tone: "bad",
+        label: "좌측 패널 ❌",
+        text: "맛있는 음식 만들어줘",
+      },
+      {
+        kind: "marker",
+        tone: "good",
+        label: "우측 패널 ✅",
+        text: "초등학생용, 맵지 않고 10분 안에 만들 수 있는 떡볶이",
+      },
+    ],
+  },
+  {
+    title: "PRD (Product Requirements Document)란?",
+    lines: [
+      {
+        kind: "text",
+        text: "만들고 싶은 것을 AI가 완벽하게 이해할 수 있도록 적어둔 '설계도'이자 '레시피'입니다.",
+      },
+      { kind: "marker", tone: "label", label: "이미지 내 라벨", text: "Recipe Book\nPRD" },
+    ],
+  },
+  {
+    title: "마법 주문: 5W1H 기획법",
+    lines: [
+      {
+        kind: "text",
+        text: "Who (누가) — 초등학생\nWhat (무엇을) — 구구단 게임\nWhy (왜) — 재미있게 반복 학습\nWhere (어디서) — 웹 브라우저\nWhen (언제) — 수업 10분 활동\nHow (어떻게) — 퀴즈 + 점수 시스템",
+      },
+      { kind: "text", text: "완벽한 설계도를 완성하는 6가지 질문!" },
+    ],
+  },
+  {
+    title: "어떤 기획이 AI를 춤추게 할까요?",
+    lines: [
+      {
+        kind: "marker",
+        tone: "bad",
+        label: "나쁜 기획 ❌",
+        text: "수학 게임 만들어줘\n방향이 없어 AI가 헤갈려요!",
+      },
+      {
+        kind: "marker",
+        tone: "good",
+        label: "좋은 기획 ✅",
+        text: "초3 학생용 구구단 게임. 30초 제한, 정답 맞히면 점수 증가, 틀리면 힌트 제공.",
+      },
+      {
+        kind: "marker",
+        tone: "label",
+        label: "오락기 게임 화면 내 UI 텍스트",
+        text: "00:10\n7 x 8 = ?\n54  56  64\nSCORE: 120",
+      },
+    ],
+  },
+  {
+    title: "실전 미션 1! '할 일 관리 앱' 설계도 작성하기",
+    lines: [
+      {
+        kind: "text",
+        text: "역할: 너는 숙련된 기획자이자 프론트엔드 개발자야.\n다음 요구사항을 기반으로 상세한 PRD를 작성해줘.",
+      },
+      {
+        kind: "marker",
+        tone: "label",
+        label: "요구사항",
+        text: "- 매일 10~20개 할 일을 관리하는 개인용 앱\n- 기능: 1. 할 일 추가/수정/삭제 2. 완료 체크 3. 카테고리 분류 4. 진행률 표시\n- 브라우저에서 실행, 새로고침해도 데이터 유지\n- 순수 JavaScript 사용 (복잡한 프레임워크 금지)",
+      },
+      {
+        kind: "text",
+        text: "프롬프트를 입력하고 AI가 그려주는 완벽한 설계도를 확인해 보세요!",
+      },
+    ],
+  },
+  {
+    title: "웹사이트는 어떻게 지어질까?",
+    lines: [
+      { kind: "marker", tone: "label", label: "이미지 내 라벨", text: "PRD" },
+      {
+        kind: "text",
+        text: "2차시: 완벽한 설계도가 완성되었으니, 이제 튼튼한 마법의 집을 지어봅시다!",
+      },
+    ],
+  },
+  {
+    title: "집 짓기 3총사: HTML, CSS, JavaScript",
+    lines: [
+      {
+        kind: "text",
+        text: "script.js — (전기·자동 시스템 / 기능·동작)\nstyle.css — (건물의 인테리어 / 디자인)\nindex.html — (건물의 뼈대 / 구조)",
+      },
+    ],
+  },
+  {
+    title: "앱을 짓는 3명의 건축가",
+    lines: [
+      {
+        kind: "text",
+        text: "HTML (뼈대) — 역할: 건물의 설계도와 기둥. 웹페이지의 내용과 구조 담당.\n예시: index.html (제목, 버튼, 글자 배치)\n\nCSS (인테리어) — 역할: 건물의 페인트와 벽지. 색상, 크기, 예쁜 디자인.\n예시: style.css (색상 변경, 동근 모서리, 가운데 정렬)\n\nJS (전기/자동화) — 역할: 건물의 조명 스위치와 엘리베이터. 버튼 클릭 시의 동작과 데이터 처리.\n예시: script.js (추가 버튼을 누르면 리스트가 생김!)",
+      },
+    ],
+  },
+  {
+    title: "절대로 기억을 잃지 않는 마법의 금고: localStorage",
+    lines: [
+      { kind: "marker", tone: "label", label: "이미지 내 라벨", text: "F5" },
+      {
+        kind: "marker",
+        tone: "label",
+        label: "좌측 박스",
+        text: "일반적인 웹페이지는 새로고침(F5)을 하거나 창을 닫으면 방금 적은 내용이 모두 날아갑니다! 🌪",
+      },
+      { kind: "marker", tone: "good", label: "중앙 박스", text: "해결책: localStorage" },
+      {
+        kind: "marker",
+        tone: "label",
+        label: "우측 박스",
+        text: "사용자의 컴퓨터(브라우저)에 직접 데이터를 저장하는 마법의 공간. 인터넷을 끊다 켜도, 새로고침을 해도 데이터가 그대로 유지됩니다. 복잡한 서버가 없어도 우리가 만든 데이터를 안전하게 보관해 줍니다.",
+      },
+    ],
+  },
+  {
+    title: "이제 진짜 코딩을 시작해볼까요?",
+    lines: [
+      {
+        kind: "text",
+        text: "✅ 완벽한 설계도 (PRD) 완비!\n✅ 튼튼한 기초 (HTML/CSS/JS) 준비 완료!\n✨ AI 건축가와 함께 키보드로 마법을 부려보요! ✨",
+      },
+    ],
+  },
+];
 
 const DODGE_ORDER = `# 피하기 게임 작업지시서
 
@@ -256,6 +404,52 @@ export default function GamegenPage() {
         title="바이브코딩 게임 만들기"
         intro="AI와 함께 게임을 만드는 방법을 안내해요. 장르를 고르면 작업지시서가 나오고, 고칠 수 있어요."
       />
+
+      <section className="section" aria-labelledby="gamegen-theory">
+        <h2 id="gamegen-theory">바이브코딩 기본 이론</h2>
+        <p>
+          AI와 함께 앱을 만들기 전에 꼭 알아야 할 11가지 핵심 이론이에요. (원본 슬라이드
+          그대로예요) 제목을 눌러 펼치면 슬라이드와 내용을 볼 수 있어요.
+        </p>
+        <div className="gamegen-slide-list">
+          {THEORY_SLIDES.map((slide, index) => {
+            const file = `s${String(index + 1).padStart(2, "0")}-1.png`;
+            return (
+              <details className="gamegen-slide" key={file} open={index === 0}>
+                <summary>
+                  <span className="gamegen-slide-no" aria-hidden="true">
+                    {index + 1}
+                  </span>
+                  <span className="gamegen-slide-title">{slide.title}</span>
+                </summary>
+                <div className="gamegen-slide-body">
+                  <img
+                    src={`${import.meta.env.BASE_URL}images/vibe-theory/${file}`}
+                    alt={`바이브코딩 기본이론 ${index + 1}장 — ${slide.title}`}
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  {slide.lines.map((line, lineIndex) =>
+                    line.kind === "text" ? (
+                      <p className="gamegen-slide-text" key={lineIndex}>
+                        {line.text}
+                      </p>
+                    ) : (
+                      <p
+                        className={`gamegen-marker is-${line.tone}`}
+                        key={lineIndex}
+                      >
+                        <span className="gamegen-marker-tag">[{line.label}]</span>
+                        {line.text}
+                      </p>
+                    ),
+                  )}
+                </div>
+              </details>
+            );
+          })}
+        </div>
+      </section>
 
       <section className="section" aria-labelledby="gamegen-what">
         <h2 id="gamegen-what">이 페이지는 무엇인가요?</h2>

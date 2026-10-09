@@ -1,0 +1,116 @@
+/* /gamegen — 바이브코딩 게임 만들기 */
+
+/* ---- 기본 이론 슬라이드 아코디언 ---- */
+
+.gamegen-slide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gamegen-slide {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 0 18px;
+}
+
+.gamegen-slide summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  font-size: 15.5px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.gamegen-slide summary::-webkit-details-marker {
+  display: none;
+}
+
+.gamegen-slide summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--text-sub);
+  transition: transform 0.15s ease;
+}
+
+.gamegen-slide[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.gamegen-slide-no {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  font-size: 13px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+}
+
+.gamegen-slide-title {
+  word-break: keep-all;
+}
+
+.gamegen-slide-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2px 0 18px;
+}
+
+.gamegen-slide-body img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+}
+
+.gamegen-slide-text {
+  margin: 0;
+  white-space: pre-line;
+  word-break: keep-all;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.gamegen-marker {
+  margin: 0;
+  padding: 10px 12px;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--bg);
+  white-space: pre-line;
+  word-break: keep-all;
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+.gamegen-marker.is-bad {
+  border-style: dashed;
+}
+
+.gamegen-marker.is-good {
+  background: var(--accent-weak);
+  border-color: transparent;
+}
+
+.gamegen-marker-tag {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 6px 6px 0;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+}
