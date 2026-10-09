@@ -208,26 +208,6 @@ const RESOURCES: ResourceCard[] = [
     },
   },
   {
-    tag: "정보·과학 융합 · 단원별 학습",
-    title: "아두이노(엠블록)",
-    short:
-      "커피보드 키트로 캔디보이·픽셀아트·응원봉을 만들어요. mblock 코딩 수업 자료를 모았어요.",
-    cta: "아두이노 배우러 가기 →",
-    to: "/arduino",
-    tile: {
-      from: "#4ade80",
-      to: "#15803d",
-      glyph: (
-        <>
-          <circle cx="7" cy="7" r="2" />
-          <circle cx="17" cy="17" r="2" />
-          <path d="M9 7h8a2 2 0 0 1 2 2v6" />
-          <path d="M7 9v6a2 2 0 0 0 2 2h6" />
-        </>
-      ),
-    },
-  },
-  {
     tag: "고등 진로선택 · 단원별 학습",
     title: "인공지능 수학",
     short:
