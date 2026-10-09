@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const BASE_TITLE = "메이크펀에듀 — 잘생긴 홍진샘과 함께하는 교육자료";
+const BASE_TITLE = "메이크펀에듀 — 홍진샘과 함께하는 수업자료";
 
 const TITLES: Array<[string, string]> = [
   ["/", BASE_TITLE],

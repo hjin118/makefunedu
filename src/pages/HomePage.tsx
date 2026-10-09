@@ -280,7 +280,7 @@ export default function HomePage() {
         />
         <div>
           <span className="home-label">메이크펀에듀</span>
-          <h1>잘생긴 홍진샘과 함께하는 교육자료</h1>
+          <h1>홍진샘과 함께하는 수업자료</h1>
           <p className="home-subtitle">수업에 바로 쓰는 교육자료를 한곳에 모았어요.</p>
         </div>
       </header>
