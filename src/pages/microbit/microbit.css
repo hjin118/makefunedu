@@ -1,0 +1,329 @@
+/* 마이크로비트 — 확장 스타일 (전역 토큰 재사용) */
+
+/* ---- 허스키렌즈 화면 상태 색 (컴포넌트 토큰) ---- */
+
+.mb-section {
+  --mb-hl-amber: var(--warn);
+  --mb-hl-yellow: #ca8a04;
+  --mb-hl-blue: var(--accent);
+}
+
+/* ---- 스티키 섹션 내비 ---- */
+
+.mb-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card-border);
+  padding: 10px 0;
+  margin-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.mb-nav a {
+  flex-shrink: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-sub);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.mb-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.mb-nav a span {
+  margin-right: 2px;
+}
+
+/* ---- 섹션 공통 ---- */
+
+.mb-section {
+  scroll-margin-top: 76px;
+}
+
+.mb-section h3 {
+  margin-top: 28px;
+}
+
+.mb-sec-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 10px;
+  transform: translateY(-2px);
+}
+
+/* ---- 안내 박스 ---- */
+
+.mb-note {
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  background: var(--card-bg);
+}
+
+.mb-note > strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mb-note > div {
+  color: var(--text-sub);
+}
+
+.mb-note.is-warn {
+  border-left-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+.mb-note.is-warn > div {
+  color: var(--text);
+}
+
+.mb-note.is-ok {
+  border-left-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.mb-note.is-ok > div {
+  color: var(--text);
+}
+
+/* ---- 두뇌 카드 ---- */
+
+.mb-brain-card {
+  border-left: 4px solid var(--accent);
+}
+
+/* ---- 기능 카드 ---- */
+
+.mb-feature {
+  position: relative;
+}
+
+.mb-feature h4 {
+  margin: 0 0 6px;
+}
+
+.mb-feature-no {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+.mb-feature-desc {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+/* ---- 번호 단계 목록 ---- */
+
+.mb-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.mb-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 14px 16px;
+}
+
+.mb-step-no {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+}
+
+.mb-step strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.mb-step-desc {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+.mb-step-text {
+  align-self: center;
+  color: var(--text);
+}
+
+/* ---- 실습 카드 ---- */
+
+.mb-practice-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.mb-practice-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mb-practice-no {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-top: 2px;
+}
+
+.mb-practice-head strong {
+  display: block;
+  font-size: 15.5px;
+}
+
+.mb-practice-slide {
+  display: block;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.mb-practice-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.mb-practice-cols h4 {
+  margin: 0 0 4px;
+  font-size: 13.5px;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.mb-practice-desc {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+/* ---- 허스키렌즈 ---- */
+
+.mb-led-dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: 999px;
+  margin-right: 8px;
+  vertical-align: -1px;
+  border: 1px solid var(--card-border);
+}
+
+.mb-led-dot[data-tone="orange-yellow"] {
+  background: linear-gradient(90deg, var(--mb-hl-amber) 50%, var(--mb-hl-yellow) 50%);
+}
+
+.mb-led-dot[data-tone="yellow"] {
+  background: var(--mb-hl-yellow);
+}
+
+.mb-led-dot[data-tone="blue"] {
+  background: var(--mb-hl-blue);
+}
+
+.mb-en {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.mb-init-list {
+  margin: 0;
+  padding-left: 22px;
+}
+
+.mb-init-list li {
+  padding: 3px 0;
+}
+
+.mb-init-innote {
+  margin: 0;
+}
+
+.mb-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 12px;
+}
+
+.mb-husky-card h4 {
+  margin: 0 0 6px;
+}
+
+.mb-husky-points {
+  margin-top: 10px;
+}
+
+.mb-husky-points li {
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+/* ---- 모바일 ---- */
+
+@media (max-width: 640px) {
+  .mb-practice-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .mb-feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mb-step {
+    flex-direction: column;
+  }
+}

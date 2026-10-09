@@ -19,6 +19,7 @@ const ROUTES = [
   "/gamegen",
   "/coding",
   "/esp32",
+  "/microbit",
 ];
 
 function siteUrl() {

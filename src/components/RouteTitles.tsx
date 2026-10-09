@@ -12,6 +12,7 @@ const TITLES: Array<[string, string]> = [
   ["/gamegen", "바이브코딩 게임 만들기 | 메이크펀에듀"],
   ["/coding", "코딩 단원 | 메이크펀에듀"],
   ["/esp32", "피지컬 AI (ESP32) | 메이크펀에듀"],
+  ["/microbit", "마이크로비트 | 메이크펀에듀"],
   ["/aimath", "인공지능 수학 | 메이크펀에듀"],
 ];
 

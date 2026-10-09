@@ -188,6 +188,26 @@ const RESOURCES: ResourceCard[] = [
     },
   },
   {
+    tag: "정보·과학 융합 · 단원별 학습",
+    title: "마이크로비트",
+    short:
+      "확장보드·MakeCode·센서·허스키렌즈 AI 카메라까지 마이크로비트 수업 자료를 모았어요.",
+    cta: "마이크로비트 배우러 가기 →",
+    to: "/microbit",
+    tile: {
+      from: "#f43f5e",
+      to: "#be123c",
+      glyph: (
+        <>
+          <rect x="4" y="7" width="16" height="10" rx="2" />
+          <path d="M7.5 12h.01" />
+          <path d="M12 12h.01" />
+          <path d="M16.5 12h.01" />
+        </>
+      ),
+    },
+  },
+  {
     tag: "고등 진로선택 · 단원별 학습",
     title: "인공지능 수학",
     short:
