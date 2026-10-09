@@ -312,6 +312,73 @@
   color: var(--text-sub);
 }
 
+/* ---- 원본 슬라이드 ---- */
+
+.mb-slide-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 16px 0 0;
+}
+
+.mb-slide {
+  margin: 0;
+}
+
+.mb-slide-cap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.mb-slide-badge {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.mb-slide-cap strong {
+  font-size: 15.5px;
+  word-break: keep-all;
+}
+
+.mb-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--card-bg);
+}
+
+.mb-slide img + img {
+  margin-top: 10px;
+}
+
+.mb-slide-text {
+  margin-top: 10px;
+  background: var(--card-bg);
+  border: 1px dashed var(--card-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+}
+
+.mb-slide-text p {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+.mb-slide-text p + p {
+  margin-top: 4px;
+}
+
 /* ---- 모바일 ---- */
 
 @media (max-width: 640px) {

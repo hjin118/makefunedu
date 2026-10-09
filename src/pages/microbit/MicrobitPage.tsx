@@ -21,6 +21,9 @@ import {
   SECTION_NAV,
   SENSOR_ITEMS,
   TTS_STEPS,
+  getSlides,
+  getSlidesByNums,
+  type Slide,
 } from "./data";
 
 /* ---------- 작은 빌딩 블록 ---------- */
@@ -65,6 +68,43 @@ function Note({
     <div className={`mb-note is-${tone}`}>
       <strong>{title}</strong>
       <div>{children}</div>
+    </div>
+  );
+}
+
+function SlideBlock({ slide }: { slide: Slide }) {
+  return (
+    <figure className="mb-slide">
+      <figcaption className="mb-slide-cap">
+        <span className="mb-slide-badge">슬라이드 {slide.no}</span>
+        {slide.title ? <strong>{slide.title}</strong> : null}
+      </figcaption>
+      {slide.files.map((file, i) => (
+        <img
+          key={file}
+          src={`${import.meta.env.BASE_URL}images/microbit/${file}`}
+          alt={`슬라이드 ${slide.no} 원본 이미지${slide.title ? ` — ${slide.title}` : ""} (${i + 1}/${slide.files.length})`}
+          loading="lazy"
+          decoding="async"
+        />
+      ))}
+      {slide.text.length > 0 ? (
+        <div className="mb-slide-text">
+          {slide.text.map((line) => (
+            <p key={line}>{line}</p>
+          ))}
+        </div>
+      ) : null}
+    </figure>
+  );
+}
+
+function SlideFlow({ slides }: { slides: Slide[] }) {
+  return (
+    <div className="mb-slide-flow">
+      {slides.map((slide) => (
+        <SlideBlock key={slide.no} slide={slide} />
+      ))}
     </div>
   );
 }
@@ -150,6 +190,12 @@ export default function MicrobitPage() {
           확장보드의 전원 스위치와 18650 배터리 홀더, 5V 외부 전원 터미널이 있으니 전원 연결 방식을
           수업 전에 꼭 확인해요.
         </Note>
+
+        <h3>원본 슬라이드 자료</h3>
+        <p className="page-intro">
+          수업 자료 원본을 순서대로 보여줘요. 사진이 많으니 조금 기다리면 나타나요.
+        </p>
+        <SlideFlow slides={getSlides("start")} />
       </Sec>
 
       {/* ② 부품 연결하는 법 */}
@@ -157,7 +203,7 @@ export default function MicrobitPage() {
         id="wiring"
         no="②"
         title="부품 연결하는 법"
-        intro="원본 교재의 연결 그림(슬라이드 9-14)을 따라가며 부품을 연결하는 연습을 해요."
+        intro="원본 교재의 연결 그림을 따라가며 부품을 연결하는 연습을 해요."
       >
         <div className="grid-2">
           <div className="card">
@@ -177,6 +223,8 @@ export default function MicrobitPage() {
             </ul>
           </div>
         </div>
+
+        <SlideFlow slides={getSlides("wiring")} />
       </Sec>
 
       {/* ③ 프로그래밍 시작하기 */}
@@ -215,6 +263,12 @@ export default function MicrobitPage() {
         <Note tone="info" title="도전 과제 1">
           {MUSIC_CHALLENGE}
         </Note>
+
+        <h3>원본 슬라이드 자료</h3>
+        <p className="page-intro">
+          프로그램 블록은 슬라이드 이미지에 그대로 나와 있어요. 그림을 크게 보면서 따라 만들어요.
+        </p>
+        <SlideFlow slides={getSlides("coding")} />
       </Sec>
 
       {/* ④ 출력 실습 5종 */}
@@ -225,27 +279,32 @@ export default function MicrobitPage() {
         intro="LED, 글자, 소리, 네오픽셀, 서보모터를 직접 움직여 봐요. 각 실습은 연결 방법과 프로그램 두 단계로 진행해요."
       >
         <div className="mb-practice-list">
-          {OUTPUT_PRACTICES.map((practice) => (
-            <article className="card mb-practice" key={practice.no}>
-              <header className="mb-practice-head">
-                <span className="mb-practice-no">{practice.no}</span>
-                <div>
-                  <strong>{practice.title}</strong>
-                  <span className="mb-practice-slide">{practice.slide}</span>
+          {OUTPUT_PRACTICES.map((practice) => {
+            const [wiringSlide] = getSlidesByNums([practice.wiringSlide]);
+            const [programSlide] = getSlidesByNums([practice.programSlide]);
+            return (
+              <article className="card mb-practice" key={practice.no}>
+                <header className="mb-practice-head">
+                  <span className="mb-practice-no">{practice.no}</span>
+                  <div>
+                    <strong>{practice.title}</strong>
+                  </div>
+                </header>
+                <div className="mb-practice-cols">
+                  <div>
+                    <h4>연결 방법</h4>
+                    <p className="mb-practice-desc">{practice.wiring}</p>
+                    {wiringSlide ? <SlideBlock slide={wiringSlide} /> : null}
+                  </div>
+                  <div>
+                    <h4>프로그램</h4>
+                    <p className="mb-practice-desc">{practice.program}</p>
+                    {programSlide ? <SlideBlock slide={programSlide} /> : null}
+                  </div>
                 </div>
-              </header>
-              <div className="mb-practice-cols">
-                <div>
-                  <h4>연결 방법</h4>
-                  <p className="mb-practice-desc">{practice.wiring}</p>
-                </div>
-                <div>
-                  <h4>프로그램</h4>
-                  <p className="mb-practice-desc">{practice.program}</p>
-                </div>
-              </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </Sec>
 
@@ -256,13 +315,14 @@ export default function MicrobitPage() {
         title="센서 읽기 3종"
         intro="mblock으로 빛, 초음파, 수분 센서 값을 읽어 와요."
       >
+        <SlideFlow slides={getSlidesByNums([32])} />
         <div className="grid-2">
           {SENSOR_ITEMS.map((item) => (
             <article className="card mb-sensor" key={item.name}>
               <span className="badge">{item.tool}</span>
               <h3>{item.name}</h3>
               <p className="mb-feature-desc">{item.goal}</p>
-              <p className="footnote">※ {item.slide}</p>
+              <SlideFlow slides={getSlidesByNums(item.slides)} />
             </article>
           ))}
         </div>
@@ -278,6 +338,7 @@ export default function MicrobitPage() {
         title="프로젝트 3종"
         intro="배운 출력 부품과 센서를 한 데 모아 생활 속 문제를 해결해 봐요."
       >
+        <SlideFlow slides={getSlidesByNums([39])} />
         <div className="grid-2">
           {PROJECT_ITEMS.map((project) => (
             <article className="card mb-project" key={project.title}>
@@ -290,7 +351,7 @@ export default function MicrobitPage() {
                   </span>
                 ))}
               </div>
-              <p className="footnote">※ {project.slide} — 연결 방법 + 프로그램</p>
+              <SlideFlow slides={getSlidesByNums(project.slides)} />
             </article>
           ))}
         </div>
@@ -334,6 +395,8 @@ export default function MicrobitPage() {
             </p>
           </div>
         </div>
+
+        <SlideFlow slides={getSlides("voice")} />
       </Sec>
 
       {/* ⑧ 허스키렌즈 AI 카메라 */}
@@ -473,6 +536,12 @@ export default function MicrobitPage() {
             </div>
           ))}
         </div>
+
+        <h3>원본 슬라이드 자료</h3>
+        <p className="page-intro">
+          허스키렌즈 단원의 원본 슬라이드예요. 기능 화면과 학습 방법을 그림으로 확인해요.
+        </p>
+        <SlideFlow slides={getSlides("huskylens")} />
       </Sec>
     </div>
   );
