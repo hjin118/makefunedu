@@ -20,6 +20,7 @@ const ROUTES = [
   "/coding",
   "/esp32",
   "/microbit",
+  "/arduino",
 ];
 
 function siteUrl() {

@@ -11,6 +11,7 @@ import CodePage from "./pages/code/CodePage";
 import AiMathPage from "./pages/AiMathPage";
 import PhysicalAiPage from "./pages/esp32/PhysicalAiPage";
 import MicrobitPage from "./pages/microbit/MicrobitPage";
+import ArduinoPage from "./pages/arduino/ArduinoPage";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -47,6 +48,7 @@ export default function App() {
         <Route path="/coding" element={<CodePage />} />
         <Route path="/esp32" element={<PhysicalAiPage />} />
         <Route path="/microbit" element={<MicrobitPage />} />
+        <Route path="/arduino" element={<ArduinoPage />} />
         <Route path="/aimath/*" element={<AiMathPage />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
