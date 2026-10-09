@@ -1,0 +1,566 @@
+/* ============ PENEDU — 따뜻한 종이 노트 디자인 시스템 (원본 정합) ============ */
+
+:root {
+  font-size: 16px;
+  --bg: #f7f6f2;            /* 따뜻한 크림 배경 */
+  --text: #1f2328;          /* 본문 텍스트 (--ink) */
+  --text-sub: #5b6168;      /* 보조 텍스트 (--muted) */
+  --accent: #3b5bdb;        /* 포인트 블루 */
+  --accent-strong: #3450c4;
+  --accent-ink: #ffffff;
+  --accent-weak: #e8edff;   /* 옅은 파랑 세배경 (--accent-soft) */
+  --card-bg: #ffffff;       /* --surface */
+  --card-border: #e3e1da;   /* --line */
+  --radius: 14px;
+  --radius-card: var(--radius);
+  --ok: #15803d;
+  --ok-soft: #dcfce7;
+  --bad: #b91c1c;
+  --bad-soft: #fee2e2;
+  --warn: #a16207;
+  --warn-soft: #fef3c7;
+  --max-width: 896px;       /* 본문 최대 폭 */
+  --font: "Pretendard Variable", Pretendard, -apple-system, "Apple SD Gothic Neo",
+    "Malgun Gothic", sans-serif;
+}
+
+/* ---- 학교급 어댑티브 테마 (/prompt) ---- */
+html[data-level="elementary"] {
+  --bg: #fffaf0;
+  --card-border: #f1e3c6;
+  --accent: #c2410c;
+  --accent-weak: #ffedd5;
+  --radius: 22px;
+  font-size: 19px;
+}
+
+html[data-level="middle"] {
+  --bg: #f3faf8;
+  --card-border: #d5ebe5;
+  --accent: #0f766e;
+  --accent-weak: #d7f2ec;
+  --radius: 16px;
+  font-size: 17px;
+}
+
+html[data-level="high"] {
+  --bg: #f5f6f9;
+  --card-border: #dde1ea;
+  --accent: #1e3a8a;
+  --accent-weak: #e2e8f6;
+  --radius: 10px;
+  font-size: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.25s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0 0 12px;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  word-break: keep-all;
+}
+
+h1 {
+  font-size: clamp(34px, 5.5vw, 52px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 800;
+  letter-spacing: -0.025em;
+}
+
+h3 {
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+h4 {
+  font-size: 15.5px;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 12px;
+  word-break: keep-all;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* ---------- 레이아웃 ---------- */
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.page {
+  padding-top: 20px;
+  padding-bottom: 96px;
+}
+
+.section {
+  margin-top: 48px;
+}
+
+.section > h2 {
+  margin-bottom: 16px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+/* ---------- 카드 ---------- */
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+}
+
+.card-hover {
+  transition: box-shadow 0.18s ease, transform 0.18s ease;
+}
+
+.card-hover:hover {
+  box-shadow: 0 6px 20px rgba(31, 35, 40, 0.07);
+  transform: translateY(-1px);
+}
+
+.card-cta {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+/* ---------- 태그 · 배지 ---------- */
+
+.tag {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border: none;
+  border-radius: 999px;
+  padding: 4px 12px;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--text);
+  border-radius: 999px;
+  padding: 5px 14px;
+  letter-spacing: -0.01em;
+}
+
+.badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---------- 버튼 ---------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-height: 44px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 9px 18px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: box-shadow 0.15s ease, background 0.15s ease, transform 0.15s ease;
+}
+
+.btn:hover {
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(31, 35, 40, 0.08);
+}
+
+.btn-primary {
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.btn-primary:hover {
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+  box-shadow: 0 4px 14px rgba(59, 91, 219, 0.3);
+}
+
+.btn-small {
+  font-size: 13.5px;
+  min-height: 34px;
+  padding: 5px 13px;
+  border-radius: 9px;
+}
+
+.btn:disabled,
+.btn:disabled:hover {
+  cursor: not-allowed;
+  color: var(--text-sub);
+  background: var(--card-bg);
+  border-color: var(--card-border);
+  box-shadow: none;
+  transform: none;
+  opacity: 0.7;
+}
+
+/* ---------- 텍스트 링크 CTA ---------- */
+
+.link-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.link-cta:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.more-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-sub);
+  background: none;
+  border: none;
+  padding: 2px 0;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--card-border);
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.more-link:hover {
+  color: var(--accent);
+  text-decoration-color: var(--accent);
+}
+
+/* ---------- 탭 ---------- */
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+  border-bottom: 1px solid var(--card-border);
+  margin: 20px 0 24px;
+}
+
+.tab {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-sub);
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  cursor: pointer;
+  letter-spacing: -0.01em;
+}
+
+.tab:hover {
+  color: var(--text);
+}
+
+.tab[aria-selected="true"] {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+/* ---------- 복사용 프롬프트 블록 ---------- */
+
+.prompt-block {
+  background: var(--bg);
+  border: 1px dashed var(--card-border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 12px 0;
+}
+
+.prompt-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.prompt-head strong {
+  font-size: 14px;
+}
+
+.prompt-block pre {
+  margin: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+/* ---------- 폼 ---------- */
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  font-family: inherit;
+  font-size: 15px;
+  color: var(--text);
+  background: #ffffff;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 10px 13px;
+}
+
+textarea {
+  width: 100%;
+  resize: vertical;
+  line-height: 1.65;
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+.tab:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ---------- 모달 ---------- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(31, 35, 40, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+
+.modal {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 24px;
+  width: min(440px, 100%);
+  box-shadow: 0 20px 60px rgba(31, 35, 40, 0.22);
+}
+
+.modal-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.modal-head h3 {
+  margin: 0;
+}
+
+.modal-close {
+  font-family: inherit;
+  font-size: 15px;
+  background: none;
+  border: none;
+  color: var(--text-sub);
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 8px;
+}
+
+.modal-close:hover {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+/* ---------- 하위 페이지 헤더 ---------- */
+
+.page-header {
+  padding: 24px 0 8px;
+}
+
+.home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-sub);
+  margin-bottom: 20px;
+}
+
+.home-link-avatar {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+}
+
+.home-link:hover {
+  color: var(--accent);
+}
+
+.page-intro {
+  color: var(--text-sub);
+  max-width: 680px;
+}
+
+/* ---------- 기타 ---------- */
+
+.footnote {
+  font-size: 13.5px;
+  color: var(--text-sub);
+}
+
+.check-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.check-list li {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  padding: 6px 0;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table.simple {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14.5px;
+}
+
+table.simple th,
+table.simple td {
+  text-align: left;
+  border-bottom: 1px solid var(--card-border);
+  padding: 10px 12px;
+  vertical-align: top;
+}
+
+table.simple th {
+  font-weight: 700;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+/* ---------- 모바일 ---------- */
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 21px;
+  }
+}

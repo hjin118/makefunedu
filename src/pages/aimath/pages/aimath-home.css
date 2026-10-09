@@ -1,0 +1,97 @@
+/* /aimath 홈 — 원본 정합 히어로 + 단원별 액센트 카드 */
+
+.ai-hero {
+  background: var(--accent-weak);
+  border-radius: var(--radius-card);
+  padding: 40px 36px;
+  margin-top: 12px;
+}
+
+.ai-hero-kicker {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+.ai-hero h1 {
+  font-size: clamp(34px, 5vw, 46px);
+  margin: 10px 0 14px;
+}
+
+.ai-hero p {
+  max-width: 640px;
+  margin-bottom: 22px;
+}
+
+/* 단원 카드 */
+
+.ai-unit-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 768px) {
+  .ai-unit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ai-unit-card {
+  border-top: 3px solid var(--unit-accent, var(--accent));
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  padding: 22px;
+}
+
+.ai-unit-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.ai-unit-roman {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--unit-accent, var(--accent));
+  letter-spacing: -0.01em;
+}
+
+.ai-unit-name {
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.ai-unit-short {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin: 0;
+}
+
+.ai-unit-count {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.ai-unit-go {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--unit-accent, var(--accent));
+  margin-top: 6px;
+}
+
+@media (max-width: 640px) {
+  .ai-hero {
+    padding: 28px 22px;
+  }
+}

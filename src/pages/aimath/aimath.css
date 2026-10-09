@@ -1,0 +1,1062 @@
+/* ============ 인공지능 수학 서브앱 스타일 ============
+   PENEDU 디자인 토큰(global.css)을 그대로 쓰면서,
+   서브앱만의 정체(흰 배너 바 · ∑ 로고)를 줘요.
+   서브앱 전용 의미 토큰(정답/오답)도 여기서 정의해요. */
+
+.ai-app {
+  /* 정답 · 오답 피드백용 의미 토큰 (서브앱 확장) */
+  --ai-good: #2e7355;
+  --ai-good-border: #bfd8cb;
+  --ai-good-weak: #eef6f1;
+  --ai-bad: #a8443a;
+  --ai-bad-border: #e0c2bb;
+  --ai-bad-weak: #f9f0ed;
+
+  position: relative;
+}
+
+/* ---------- 건너뛰기 링크 ---------- */
+
+.ai-skip-link {
+  position: absolute;
+  left: 12px;
+  top: 12px;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--card-bg);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 14.5px;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  padding: 8px 14px;
+}
+
+.ai-skip-link:focus-visible {
+  transform: translateY(0);
+  text-decoration: none;
+}
+
+/* ---------- 배너 ---------- */
+
+.ai-banner {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.ai-banner-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  min-height: 60px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.ai-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text);
+}
+
+.ai-brand:hover {
+  text-decoration: none;
+}
+
+.ai-logo-mark {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.ai-wordmark {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+.ai-banner-nav {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ai-banner-link {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+  border-radius: 8px;
+  padding: 6px 12px;
+}
+
+.ai-banner-link:hover {
+  color: var(--text);
+  background: var(--accent-weak);
+  text-decoration: none;
+}
+
+.ai-banner-link.active {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+/* ---------- 푸터 ---------- */
+
+.ai-footer {
+  border-top: 1px solid var(--card-border);
+  padding: 26px 0 44px;
+  color: var(--text-sub);
+  font-size: 14px;
+}
+
+.ai-footer p {
+  margin: 10px 0 0;
+}
+
+/* ---------- 홈: 대단원 카드 ---------- */
+
+.ai-unit-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ai-unit-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--text);
+  padding: 18px 16px;
+}
+
+.ai-unit-card:hover {
+  text-decoration: none;
+  border-color: var(--accent);
+  box-shadow: 0 2px 10px rgba(31, 35, 40, 0.05);
+}
+
+.ai-unit-icon {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.ai-unit-roman {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-sub);
+  letter-spacing: 0.02em;
+}
+
+.ai-unit-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  word-break: keep-all;
+}
+
+.ai-unit-go {
+  margin-top: auto;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+/* ---------- 홈: 레슨 흐름 · 캐릭터 ---------- */
+
+.ai-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ai-flow-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 18px;
+}
+
+.ai-flow-step {
+  align-self: flex-start;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.ai-flow-card h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.ai-flow-card p {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin: 0;
+}
+
+.ai-char-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.ai-char-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 18px;
+}
+
+.ai-char-avatar {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-weak);
+  font-size: 24px;
+  line-height: 1;
+}
+
+.ai-char-name {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.ai-char-card p {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  margin: 0;
+}
+
+/* ---------- 단원 페이지 ---------- */
+
+.ai-unit-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.ai-unit-emoji {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--accent-weak);
+  font-size: 28px;
+  line-height: 1;
+}
+
+.ai-story {
+  background: #fbfaf7;
+  border: 1px dashed var(--card-border);
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-top: 16px;
+}
+
+.ai-story-label {
+  display: block;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.ai-story p {
+  margin: 0;
+  color: var(--text);
+}
+
+.ai-lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ai-lesson {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+}
+
+.ai-lesson-no {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-weak);
+  color: var(--accent);
+  font-size: 13.5px;
+  font-weight: 700;
+}
+
+.ai-lesson-body {
+  min-width: 0;
+}
+
+.ai-lesson-body h4 {
+  margin: 0 0 2px;
+}
+
+.ai-lesson-body p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+.ai-lesson-link {
+  margin-left: auto;
+  flex: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.ai-def {
+  padding: 18px;
+}
+
+.ai-def h4 {
+  margin: 0 0 2px;
+}
+
+.ai-def-en {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.ai-def p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+.ai-unit-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 48px;
+}
+
+/* ---------- 계단 문제 ---------- */
+
+.ai-problem-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.ai-problem-head h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.ai-problem-q {
+  font-size: 15px;
+  word-break: keep-all;
+}
+
+.ai-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 6px 0 14px;
+}
+
+.ai-choice {
+  font-family: inherit;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.ai-choice:hover:not(:disabled) {
+  border-color: var(--accent);
+}
+
+.ai-choice.selected {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.ai-choice.correct {
+  border-color: var(--ai-good-border);
+  color: var(--ai-good);
+  background: var(--ai-good-weak);
+}
+
+.ai-choice:disabled {
+  cursor: default;
+}
+
+.ai-number-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 0 14px;
+}
+
+.ai-number-row input {
+  width: 130px;
+}
+
+.ai-unit-label {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.ai-problem-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ai-feedback {
+  margin-top: 14px;
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+}
+
+.ai-feedback p {
+  margin: 0 0 6px;
+  word-break: keep-all;
+}
+
+.ai-feedback p:last-child {
+  margin-bottom: 0;
+}
+
+.ai-feedback-correct {
+  background: var(--ai-good-weak);
+  border: 1px solid var(--ai-good-border);
+}
+
+.ai-feedback-correct strong {
+  color: var(--ai-good);
+}
+
+.ai-feedback-wrong {
+  background: var(--ai-bad-weak);
+  border: 1px solid var(--ai-bad-border);
+}
+
+.ai-feedback-wrong strong {
+  color: var(--ai-bad);
+}
+
+.ai-note-msg {
+  font-size: 13.5px;
+  color: var(--text-sub);
+}
+
+/* ---------- 체험 공통 ---------- */
+
+.ai-sim {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 22px 24px;
+}
+
+/* 소개 문단 아래의 그리드 · 체험 카드 여백 */
+.ai-app .section .grid-2,
+.ai-app .section .grid-3,
+.ai-app .section .ai-flow-grid,
+.ai-app .section .ai-char-grid,
+.ai-app .section .ai-lesson-list,
+.ai-app .section .ai-sim {
+  margin-top: 16px;
+}
+
+.ai-sim-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.ai-sim-head h3 {
+  margin: 0;
+  font-size: 17px;
+}
+
+.ai-sim-desc {
+  font-size: 14.5px;
+  color: var(--text-sub);
+  margin: 0 0 18px;
+}
+
+.ai-sim-controls {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ai-slider-row {
+  display: grid;
+  grid-template-columns: 120px 1fr 76px;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ai-slider-row output {
+  font-weight: 700;
+  color: var(--accent);
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.ai-app input[type="range"] {
+  width: 100%;
+  accent-color: var(--accent);
+  margin: 0;
+}
+
+.ai-sim-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.ai-sim-hint {
+  font-size: 14.5px;
+  color: var(--text-sub);
+  margin: 10px 0 0;
+}
+
+.ai-sim-result {
+  margin-top: 16px;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.ai-sim-praise {
+  margin-top: 10px;
+  background: var(--ai-good-weak);
+  border: 1px solid var(--ai-good-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-size: 14.5px;
+  word-break: keep-all;
+}
+
+.ai-sim-foot {
+  margin-top: 14px;
+}
+
+/* ---------- 체험 u1: 데이터 분류 ---------- */
+
+.ai-fruit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+  gap: 10px;
+}
+
+.ai-fruit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  text-align: center;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  background: var(--card-bg);
+  padding: 10px 8px;
+  font-size: 12.5px;
+}
+
+.ai-fruit.hit {
+  border-color: var(--ai-good-border);
+}
+
+.ai-fruit.miss {
+  border-color: var(--ai-bad-border);
+}
+
+.ai-fruit-emoji {
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.ai-fruit-meta {
+  color: var(--text-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+.ai-red-dot {
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  vertical-align: -1px;
+  margin-right: 4px;
+  border: 1px solid rgba(31, 35, 40, 0.08);
+}
+
+.ai-group-chip {
+  font-size: 11.5px;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 1px 9px;
+}
+
+.ai-group-chip.a {
+  color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.ai-group-chip.b {
+  color: var(--text-sub);
+  background: #f1efe9;
+}
+
+.ai-fruit-mark {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.ai-fruit-mark.ok {
+  color: var(--ai-good);
+}
+
+.ai-fruit-mark.no {
+  color: var(--ai-bad);
+}
+
+/* ---------- 체험 u2: 문장 분석 ---------- */
+
+.ai-token-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 4px 0 18px;
+}
+
+.ai-token {
+  font-size: 12.5px;
+  color: var(--text-sub);
+  background: #fbfaf7;
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 2px 9px;
+}
+
+.ai-bar-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-bar-row {
+  display: grid;
+  grid-template-columns: 90px 1fr 36px;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+
+.ai-bar-word {
+  font-weight: 600;
+  word-break: keep-all;
+}
+
+.ai-bar-track {
+  background: var(--accent-weak);
+  border-radius: 6px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.ai-bar {
+  display: block;
+  height: 100%;
+  background: var(--accent);
+  border-radius: 6px;
+}
+
+.ai-bar-count {
+  text-align: right;
+  color: var(--text-sub);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- 체험 u3: 이미지 밝기 ---------- */
+
+.ai-img-grid-wrap {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: start;
+}
+
+.ai-img-panel h4 {
+  margin-bottom: 8px;
+}
+
+.ai-pixel-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 3px;
+}
+
+.ai-pixel {
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 600;
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.ai-pixel-bin {
+  aspect-ratio: 1;
+  border: 1px solid var(--card-border);
+  border-radius: 4px;
+}
+
+.ai-img-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+/* ---------- 체험 u4: 직선 맞추기 ---------- */
+
+.ai-line-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  margin-bottom: 16px;
+}
+
+.ai-err {
+  font-size: 15px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.ai-err b {
+  color: var(--accent);
+}
+
+/* ---------- 체험 u5: 가설 세우기 ---------- */
+
+.ai-topic-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.ai-topic {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.ai-topic:hover {
+  border-color: var(--accent);
+}
+
+.ai-topic.selected {
+  border-color: var(--accent);
+  background: var(--accent-weak);
+}
+
+.ai-topic small {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-sub);
+}
+
+.ai-hypo-step {
+  margin-top: 14px;
+}
+
+.ai-hypo-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14.5px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.ai-hypo-stepno {
+  display: grid;
+  place-items: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-weak);
+  color: var(--accent);
+  font-size: 12.5px;
+  font-weight: 700;
+}
+
+.ai-hypo-hint {
+  font-size: 13px;
+  color: var(--text-sub);
+  margin: 6px 0 0;
+}
+
+.ai-summary {
+  margin-top: 20px;
+  border: 1px solid var(--accent);
+  border-radius: 12px;
+  background: var(--card-bg);
+  padding: 18px 20px;
+}
+
+.ai-summary dt {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-top: 10px;
+}
+
+.ai-summary dt:first-child {
+  margin-top: 0;
+}
+
+.ai-summary dd {
+  margin: 2px 0 0;
+  font-size: 14.5px;
+  word-break: keep-all;
+}
+
+.ai-bubble {
+  margin-top: 14px;
+  background: var(--accent-weak);
+  border-radius: 12px;
+  padding: 10px 14px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+/* ---------- 용어 사전 ---------- */
+
+.ai-glossary-index {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.ai-term {
+  padding: 18px;
+}
+
+.ai-term h4 {
+  margin: 0 0 2px;
+}
+
+.ai-term-en {
+  display: block;
+  font-size: 12.5px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.ai-term p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-sub);
+  word-break: keep-all;
+}
+
+/* ---------- 오답노트 ---------- */
+
+.ai-note-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.ai-note-toolbar h2 {
+  margin: 0;
+}
+
+.ai-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-note-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ai-note-entry-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ai-note-entry-head h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.ai-note-answers {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 4px 12px;
+  font-size: 14.5px;
+}
+
+.ai-note-answers dt {
+  color: var(--text-sub);
+}
+
+.ai-note-answers dd {
+  margin: 0;
+  word-break: keep-all;
+}
+
+.ai-note-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ai-note-time {
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.ai-note-empty {
+  text-align: center;
+  color: var(--text-sub);
+  padding: 40px 20px;
+}
+
+.ai-note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ai-note-form-row {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  align-items: center;
+  gap: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+}
+
+.ai-note-form-row select,
+.ai-note-form-row input {
+  width: 100%;
+}
+
+/* ---------- 모바일 ---------- */
+
+@media (max-width: 800px) {
+  .ai-unit-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ai-flow-grid,
+  .ai-char-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .ai-img-grid-wrap,
+  .ai-topic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-flow-grid,
+  .ai-char-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-unit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ai-lesson {
+    flex-wrap: wrap;
+  }
+
+  .ai-lesson-link {
+    margin-left: 42px;
+  }
+
+  .ai-slider-row {
+    grid-template-columns: 96px 1fr 64px;
+  }
+
+  .ai-banner-inner {
+    justify-content: center;
+    text-align: center;
+  }
+}

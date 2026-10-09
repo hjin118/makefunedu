@@ -1,0 +1,11 @@
+node_modules
+dist
+*.local
+.DS_Store
+.env
+.omo
+.playwright-mcp
+shots
+.codegraph
+*.log
+

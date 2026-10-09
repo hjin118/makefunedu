@@ -1,0 +1,130 @@
+/* ============ /prompt — 다시 묻는 AI 교실 ============ */
+
+.pdf-actions {
+  margin-top: 12px;
+}
+
+.pdf-actions .footnote {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* ---------- 핵심 5단계 하이라이트 스트립 ---------- */
+
+.flow-card {
+  background: var(--accent-weak);
+}
+
+.flow-lead {
+  margin-bottom: 14px;
+  color: var(--text-sub);
+}
+
+.flow-steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.flow-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+
+.flow-step:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  top: 16px;
+  right: -15px;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.flow-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 12.5px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.flow-name {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.flow-desc {
+  font-size: 13px;
+  color: var(--text-sub);
+  line-height: 1.55;
+}
+
+/* ---------- 학교급 탭 · 차시 카드 ---------- */
+
+.level-note,
+.level-intro {
+  color: var(--text-sub);
+}
+
+.level-intro {
+  margin-bottom: 16px;
+}
+
+.lesson-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.lesson-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.lesson-meta .tag {
+  margin-bottom: 0;
+}
+
+.lesson-goal {
+  display: flex;
+  gap: 8px;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.lesson-goal strong {
+  flex-shrink: 0;
+  font-size: 13.5px;
+  color: var(--accent);
+}
+
+/* ---------- 모바일 ---------- */
+
+@media (max-width: 640px) {
+  .flow-steps {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .flow-step:not(:last-child)::after {
+    content: none;
+  }
+}

@@ -1,0 +1,188 @@
+.home-header {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  padding: 64px 0 44px;
+}
+
+.home-header .mascot {
+  width: 112px;
+  height: 112px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: var(--radius-card);
+  border: 1px solid var(--card-border);
+  filter: drop-shadow(0 8px 20px rgba(59, 91, 219, 0.2));
+}
+
+.home-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.home-header h1 {
+  margin: 0 0 0;
+}
+
+.home-subtitle {
+  color: var(--text-sub);
+  font-size: 17px;
+  margin: 12px 0 0;
+}
+
+/* ---------- 추천 카드 ---------- */
+
+.featured {
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 26px 28px;
+  margin-bottom: 44px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 22px;
+  align-items: center;
+}
+
+.tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 13px;
+  flex-shrink: 0;
+  box-shadow: 0 3px 8px rgba(31, 35, 40, 0.14);
+}
+
+.tile-lg {
+  width: 64px;
+  height: 64px;
+  border-radius: 18px;
+}
+
+.tile-lg svg {
+  width: 30px;
+  height: 30px;
+}
+
+.featured-body .tag {
+  margin-bottom: 10px;
+}
+
+.featured-body h2 {
+  font-size: 23px;
+  margin: 0 0 6px;
+}
+
+.featured-body p {
+  margin: 0;
+  color: var(--text-sub);
+  max-width: 420px;
+}
+
+.featured-side {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+/* ---------- 자료 카드 ---------- */
+
+.resource-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.res-card {
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.res-card .tag {
+  align-self: flex-start;
+}
+
+.res-head {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  margin-bottom: 12px;
+}
+
+.res-head h2 {
+  font-size: 20px;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.res-desc {
+  margin: 0 0 8px;
+  color: var(--text);
+}
+
+.res-card .more-link {
+  align-self: flex-start;
+}
+
+.res-cta {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+}
+
+.link-cta {
+  background: none;
+  border: none;
+  padding: 2px 0;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ---------- 모바일 ---------- */
+
+@media (max-width: 768px) {
+  .resource-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-header {
+    gap: 16px;
+    padding: 36px 0 30px;
+  }
+
+  .home-header .mascot {
+    width: 74px;
+    height: 74px;
+  }
+
+  .home-subtitle {
+    font-size: 15.5px;
+    margin-top: 8px;
+  }
+
+  .featured {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    padding: 22px;
+    align-items: start;
+  }
+
+  .featured-side {
+    align-items: flex-start;
+  }
+
+  .res-desc {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

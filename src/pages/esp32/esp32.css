@@ -1,0 +1,452 @@
+/* 피지컬 AI (ESP32) — 확장 스타일 (전역 토큰 재사용) */
+
+/* ---- 스티키 섹션 내비 ---- */
+
+.esp32-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card-border);
+  padding: 10px 0;
+  margin-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.esp32-nav a {
+  flex-shrink: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-sub);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.esp32-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.esp32-nav a span {
+  margin-right: 2px;
+}
+
+/* ---- 섹션 공통 ---- */
+
+.esp32-section {
+  scroll-margin-top: 76px;
+}
+
+.esp32-section h3 {
+  margin-top: 28px;
+}
+
+.esp32-sec-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 10px;
+  transform: translateY(-2px);
+}
+
+/* ---- 안내 박스 ---- */
+
+.esp32-note {
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  background: var(--card-bg);
+}
+
+.esp32-note > strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.esp32-note > div {
+  color: var(--text-sub);
+}
+
+.esp32-note.is-warn {
+  border-left-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+.esp32-note.is-warn > div {
+  color: var(--text);
+}
+
+.esp32-note.is-ok {
+  border-left-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.esp32-note.is-ok > div {
+  color: var(--text);
+}
+
+/* ---- 흐름도 ---- */
+
+.esp32-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.esp32-flow-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.esp32-flow-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 14px 16px;
+  text-align: center;
+}
+
+.esp32-flow-card-small {
+  padding: 10px 12px;
+}
+
+.esp32-flow-step {
+  align-self: center;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.esp32-flow-desc {
+  font-size: 13.5px;
+  color: var(--text-sub);
+}
+
+.esp32-flow-arrow {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+
+.esp32-flow-reverse {
+  font-size: 13.5px;
+  color: var(--text-sub);
+  text-align: center;
+  margin: 4px 0 0;
+}
+
+/* ---- 배선 카드 ---- */
+
+.esp32-wire-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.esp32-wire-card {
+  padding: 18px;
+}
+
+.esp32-wire-head {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.esp32-wire-no {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 9px;
+  margin-top: 2px;
+}
+
+.esp32-wire-head strong {
+  display: block;
+  font-size: 15.5px;
+}
+
+.esp32-wire-port {
+  display: block;
+  font-size: 13px;
+  color: var(--text-sub);
+}
+
+.esp32-wire-table td {
+  padding: 6px 10px;
+}
+
+.esp32-wire-arrow {
+  color: var(--accent);
+  width: 24px;
+}
+
+.esp32-wire-desc {
+  font-size: 14px;
+  color: var(--text-sub);
+  margin: 10px 0 0;
+}
+
+.esp32-wire-note {
+  font-size: 13.5px;
+  color: var(--warn);
+  margin: 8px 0 0;
+}
+
+/* ---- 원본 슬라이드 아코디언 ---- */
+
+.esp32-slide-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.esp32-slide {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 0 18px;
+}
+
+.esp32-slide summary {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 0;
+  font-size: 15.5px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.esp32-slide summary::-webkit-details-marker {
+  display: none;
+}
+
+.esp32-slide summary::after {
+  content: "▾";
+  margin-left: auto;
+  color: var(--text-sub);
+  transition: transform 0.15s ease;
+}
+
+.esp32-slide[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.esp32-slide-no {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 26px;
+  height: 26px;
+  font-size: 13px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+}
+
+.esp32-slide-title {
+  word-break: keep-all;
+}
+
+.esp32-slide-body {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 2px 0 18px;
+}
+
+.esp32-slide-body img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+}
+
+.esp32-slide-lead {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+.esp32-slide-body h4 {
+  margin: 4px 0 0;
+}
+
+/* ---- 실습 카드 ---- */
+
+.esp32-practice h4 {
+  margin: 14px 0 6px;
+  font-size: 13.5px;
+  color: var(--text-sub);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.esp32-practice-think {
+  margin: 0;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+/* ---- 확인 문제 ---- */
+
+.esp32-quiz-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: none;
+}
+
+.esp32-quiz-item {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-card);
+  padding: 18px;
+}
+
+.esp32-quiz-q {
+  margin: 0 0 8px;
+}
+
+.esp32-quiz-choices {
+  margin: 0;
+  padding-left: 22px;
+  font-size: 15px;
+}
+
+.esp32-quiz-choices li {
+  padding: 2px 0;
+}
+
+.esp32-quiz-answer {
+  margin-top: 10px;
+}
+
+.esp32-quiz-answer summary {
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.esp32-quiz-answer p {
+  margin: 8px 0 0;
+  padding: 8px 12px;
+  background: var(--ok-soft);
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--ok);
+}
+
+/* ---- 용어 사전 ---- */
+
+.esp32-glossary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+}
+
+.esp32-term {
+  padding: 16px 18px;
+  margin: 0;
+}
+
+.esp32-term dt {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.esp32-term-en {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.esp32-term dd {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text-sub);
+}
+
+/* ---- 부록 ---- */
+
+.esp32-lesson-block {
+  margin-bottom: 24px;
+}
+
+.esp32-safety {
+  padding-left: 22px;
+}
+
+.esp32-safety li {
+  padding: 4px 0;
+}
+
+/* ---- 두뇌 카드 ---- */
+
+.esp32-brain-card {
+  margin-bottom: 8px;
+  border-left: 4px solid var(--accent);
+}
+
+/* ---- 모바일 ---- */
+
+@media (max-width: 640px) {
+  .esp32-wire-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .esp32-glossary {
+    grid-template-columns: 1fr;
+  }
+
+  .esp32-flow-item {
+    flex-direction: column;
+  }
+
+  .esp32-flow-arrow {
+    transform: rotate(90deg);
+  }
+
+  .esp32-flow-card {
+    width: 100%;
+  }
+}
