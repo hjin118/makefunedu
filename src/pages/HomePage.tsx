@@ -253,7 +253,7 @@ export default function HomePage() {
       <header className="home-header">
         <img
           className="mascot"
-          src="/images/hongjin.jpg"
+          src={`${import.meta.env.BASE_URL}images/hongjin.jpg`}
           alt="메이크펀에듀 운영자 정홍진 캐릭터"
           width={112}
           height={112}

@@ -410,7 +410,7 @@ export default function PhysicalAiPage() {
               </summary>
               <div className="esp32-slide-body">
                 <img
-                  src={`/images/esp32-matrix/${slide.file}`}
+                  src={`${import.meta.env.BASE_URL}images/esp32-matrix/${slide.file}`}
                   alt={`연결 회로 매트릭스 슬라이드 ${i + 1}장 — ${slide.caption}`}
                   loading="lazy"
                   decoding="async"

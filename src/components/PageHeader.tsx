@@ -12,7 +12,7 @@ export default function PageHeader({ title, intro }: PageHeaderProps) {
       <Link className="home-link" to="/">
         <img
           className="home-link-avatar"
-          src="/images/hongjin-favicon-128.png"
+          src={`${import.meta.env.BASE_URL}images/hongjin-favicon-128.png`}
           alt=""
           width={22}
           height={22}
