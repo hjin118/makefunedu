@@ -406,6 +406,149 @@
   color: var(--text-sub);
 }
 
+/* ---- ⑪ 프로젝트 실습 ---- */
+
+.esp32-prj-unit {
+  margin-top: 44px;
+}
+
+.esp32-prj-no {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-radius: 999px;
+  padding: 3px 12px;
+  margin-right: 10px;
+  transform: translateY(-2px);
+}
+
+.esp32-prj-card h4 {
+  margin: 0 0 8px;
+}
+
+.esp32-prj-card p {
+  margin: 0;
+  color: var(--text-sub);
+}
+
+.esp32-prj-card.is-problem {
+  border-left: 4px solid var(--warn);
+}
+
+.esp32-prj-card.is-goal {
+  border-left: 4px solid var(--ok);
+}
+
+.esp32-prj-card.is-check {
+  border-left: 4px solid var(--accent);
+}
+
+.esp32-prj-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.esp32-prj-checklist li {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+}
+
+.esp32-prj-checklist li::before {
+  content: "";
+  flex-shrink: 0;
+  width: 13px;
+  height: 13px;
+  border: 2px solid var(--accent);
+  border-radius: 4px;
+  transform: translateY(1px);
+}
+
+.esp32-prj-steps {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.esp32-prj-steps li {
+  padding: 3px 0;
+}
+
+.esp32-prj-steps strong {
+  margin-right: 4px;
+  color: var(--accent);
+}
+
+.esp32-slide-list-project {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.esp32-slide-block {
+  padding: 18px;
+}
+
+.esp32-slide-block-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.esp32-slide-badge {
+  flex-shrink: 0;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 10px;
+}
+
+.esp32-slide-block-head strong {
+  font-size: 15.5px;
+}
+
+.esp32-slide-lines {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+.esp32-slide-lines li {
+  padding: 2px 0;
+  word-break: keep-all;
+}
+
+.esp32-slide-imgs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+.esp32-slide-imgs.is-multi {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.esp32-slide-imgs img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+}
+
+.esp32-prompt-box {
+  margin-top: 16px;
+}
+
 /* ---- 부록 ---- */
 
 .esp32-lesson-block {
@@ -448,5 +591,13 @@
 
   .esp32-flow-card {
     width: 100%;
+  }
+
+  .esp32-slide-imgs.is-multi {
+    grid-template-columns: 1fr;
+  }
+
+  .esp32-prj-checklist {
+    grid-template-columns: 1fr;
   }
 }

@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import PageHeader from "../../components/PageHeader";
 import CopyButton from "../../components/CopyButton";
 import "./esp32.css";
+import type { ProjectSlide } from "./data";
 import {
   ACTUATORS,
   DASHBOARD_LAYOUT,
@@ -12,6 +13,8 @@ import {
   OBSERVE_POINTS,
   PRACTICES,
   PORT_MATRIX,
+  PROJECT_SETUP,
+  PROJECT_UNITS,
   QUIZZES,
   SAFETY_RULES,
   SENSORS,
@@ -87,6 +90,53 @@ function JsonBlock({ topic, json }: { topic: string; json: string }) {
   );
 }
 
+/* ---------- ⑪ 프로젝트 실습 ---------- */
+
+function SlideBlock({ slide }: { slide: ProjectSlide }) {
+  return (
+    <article className="card esp32-slide-block">
+      <header className="esp32-slide-block-head">
+        <span className="esp32-slide-badge">슬라이드 {slide.no}</span>
+        <strong>{slide.title}</strong>
+      </header>
+      {slide.lines.length > 0 ? (
+        <ul className="esp32-slide-lines">
+          {slide.lines.map((line) => (
+            <li key={line}>{line}</li>
+          ))}
+        </ul>
+      ) : null}
+      <div
+        className={`esp32-slide-imgs${slide.files.length > 1 ? " is-multi" : ""}`}
+      >
+        {slide.files.map((file) => (
+          <img
+            key={file}
+            src={`${import.meta.env.BASE_URL}images/esp32-project/${file}`}
+            alt={`프로젝트 실습 슬라이드 ${slide.no} — ${slide.title}`}
+            loading="lazy"
+            decoding="async"
+          />
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function PromptBox({ title, prompt }: { title: string; prompt: string }) {
+  return (
+    <div className="prompt-block esp32-prompt-box">
+      <div className="prompt-head">
+        <strong>manus에 붙여 넣을 프롬프트 — {title}</strong>
+        <CopyButton text={prompt} label="📋 프롬프트 복사" />
+      </div>
+      <pre>
+        <code>{prompt}</code>
+      </pre>
+    </div>
+  );
+}
+
 /* ---------- ① 흐름도 ---------- */
 
 const FLOW_STEPS = [
@@ -128,7 +178,8 @@ export default function PhysicalAiPage() {
         intro={
           <>
             센서가 달린 로봇 키트(RoboFest)와 ESP32로 IoT의 원리를 배우고, MQTT 대시보드로 세상을
-            관찰하고 움직여 봐요. 정보·과학 융합 수업용이에요.
+            관찰하고 움직여 봐요. manus AI와 함께 만드는 프로젝트 실습도 있어요. 정보·과학 융합
+            수업용이에요.
           </>
         }
       />
@@ -758,8 +809,85 @@ export default function PhysicalAiPage() {
         </dl>
       </Sec>
 
+      {/* ⑪ 프로젝트 실습 */}
+      <Sec
+        id="project"
+        no="⑪"
+        title="프로젝트 실습"
+        intro="대시보드를 직접 켜 보고, manus AI와 함께 3개의 스마트 프로젝트를 만들어 봐요. 원본 슬라이드 38장을 순서대로 따라가면 돼요."
+      >
+        <h3>대시보드 시작하기 (실습)</h3>
+        <div className="grid-2">
+          <div className="card">
+            <h4>준비물 리스트</h4>
+            <ul className="check-list">
+              {PROJECT_SETUP.supplies.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div className="card">
+            <h4>연결 8단계 한눈에 보기</h4>
+            <ol className="esp32-prj-steps">
+              {PROJECT_SETUP.steps.map((step, i) => (
+                <li key={step}>
+                  <strong>{i + 1}.</strong> {step}
+                </li>
+              ))}
+            </ol>
+          </div>
+        </div>
+
+        <Note tone="warn" title="⚠ J2 PROG에 연결하세요">
+          ESP32-S3 메인 보드에 전원을 공급하고 코드를 업로드하려면 반드시 <strong>J2 PROG</strong> 포트에
+          USB-C 케이블을 연결해야 해요. <strong>J3 DEBUG 포트는 일반적인 프로그래밍 용도가 아니에요.</strong>
+        </Note>
+
+        <div className="esp32-slide-list-project">
+          {PROJECT_SETUP.slides.map((slide) => (
+            <SlideBlock key={slide.no} slide={slide} />
+          ))}
+        </div>
+
+        {PROJECT_UNITS.map((unit) => (
+          <div className="esp32-prj-unit" key={unit.id}>
+            <h3 id={`esp32-project-${unit.id}`}>
+              <span className="esp32-prj-no">프로젝트 {unit.no}</span>
+              {unit.title}
+            </h3>
+            <div className="grid-2">
+              <div className="card esp32-prj-card is-problem">
+                <h4>문제</h4>
+                <p>{unit.problem}</p>
+              </div>
+              <div className="card esp32-prj-card is-goal">
+                <h4>목표</h4>
+                <p>{unit.goal}</p>
+              </div>
+            </div>
+            <div className="card esp32-prj-card is-check">
+              <h4>필요 부품 체크리스트</h4>
+              <ul className="esp32-prj-checklist">
+                {unit.checklist.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </div>
+            <div className="esp32-slide-list-project">
+              {unit.slides.map((slide) => (
+                <SlideBlock key={slide.no} slide={slide} />
+              ))}
+            </div>
+            <PromptBox title={unit.title} prompt={unit.prompt} />
+            <Note tone="ok" title="이렇게 테스트해요">
+              {unit.test}
+            </Note>
+          </div>
+        ))}
+      </Sec>
+
       {/* 부록 */}
-      <Sec id="appendix" no="⑪" title="부록" intro="2차시 수업 설계와 안전 수칙이에요.">
+      <Sec id="appendix" no="⑫" title="부록" intro="2차시 수업 설계와 안전 수칙이에요.">
         {LESSON_PLAN.map((plan) => (
           <div key={plan.session} className="esp32-lesson-block">
             <h3>{plan.session} 수업 진행 예시</h3>

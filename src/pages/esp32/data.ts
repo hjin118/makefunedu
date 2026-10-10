@@ -101,7 +101,8 @@ export const SECTION_NAV: Array<{ id: string; no: string; label: string }> = [
   { id: "trouble", no: "⑧", label: "문제 해결" },
   { id: "quiz", no: "⑨", label: "확인 문제" },
   { id: "glossary", no: "⑩", label: "용어 사전" },
-  { id: "appendix", no: "⑪", label: "부록" },
+  { id: "project", no: "⑪", label: "프로젝트 실습" },
+  { id: "appendix", no: "⑫", label: "부록" },
 ];
 
 export const SENSORS: SensorRow[] = [
@@ -502,9 +503,7 @@ export const SAFETY_RULES: string[] = [
 export type SlidePanel = {
   label?: string;
   table: { head: string[]; rows: string[][] };
-};
-
-export type SlideEntry = {
+};export type SlideEntry = {
   file: string;
   caption: string;
   lead?: string;
@@ -852,5 +851,403 @@ export const PRACTICES: PracticeItem[] = [
     ],
     record: ["픽셀 위치", "R·G·B 값"],
     think: "하늘색은 어떤 색을 섞으면 만들 수 있을까요?",
+  },
+];
+
+export type ProjectSlide = {
+  no: number;
+  title: string;
+  lines: string[];
+  files: string[];
+};
+
+export type ProjectUnit = {
+  id: string;
+  no: string;
+  title: string;
+  problem: string;
+  goal: string;
+  checklist: string[];
+  slides: ProjectSlide[];
+  prompt: string;
+  test: string;
+};
+
+export const PROJECT_SETUP = {
+  supplies: [
+    "하드웨어 구성품",
+    "소프트웨어 환경",
+    "PC와의 연결 포트 확인",
+    "실행 프로그램: RoboFestesp32-1.0.0-amd64.exe",
+  ],
+  steps: [
+    "대시보드 파일을 실행해요",
+    "ESP32 보드를 USB로 연결해요",
+    "연결 버튼을 클릭해요",
+    "Wi-Fi 스캔 후 비밀번호를 입력해요",
+    "아래로 드래그해 다음 IP를 선택해요",
+    "설정 저장을 클릭해요",
+    "플래시를 클릭한 다음 x로 종료해요",
+    "연결을 클릭해요",
+  ],
+  slides: [
+    {
+      no: 1,
+      title: "준비물 리스트",
+      lines: [
+        "하드웨어 구성품과 소프트웨어 환경을 확인하고, PC와의 연결 포트를 확인해요.",
+        "실행 프로그램: RoboFestesp32-1.0.0-amd64.exe",
+      ],
+      files: ["s01-1.png", "s01-2.png", "s01-3.png"],
+    },
+    {
+      no: 2,
+      title: "연결 주의 사항",
+      lines: [
+        "ESP32-S3 메인 보드에 전원을 공급하고 코드를 업로드하려면 반드시 'J2 PROG' 포트에 USB-C 케이블을 연결해야 해요.",
+        "주의: J3 DEBUG 포트는 일반적인 프로그래밍 용도가 아니에요.",
+      ],
+      files: ["s02-1.png", "s02-2.png"],
+    },
+    {
+      no: 3,
+      title: "1단계 · 파일 실행",
+      lines: ["아래 그림과 같은 ESP32 대시보드 파일을 실행해요."],
+      files: ["s03-1.png", "s03-2.png"],
+    },
+    {
+      no: 4,
+      title: "2단계 · USB 연결",
+      lines: ["아래 그림과 같은 화면이 나타나면 ESP32 보드를 USB로 연결해요."],
+      files: ["s04-1.png", "s04-2.png"],
+    },
+    {
+      no: 5,
+      title: "3단계 · 연결 버튼",
+      lines: ["아래 그림과 같은 화면이 나타나면 ESP32 연결 버튼을 클릭해요."],
+      files: ["s05-1.png", "s05-2.png"],
+    },
+    {
+      no: 6,
+      title: "4단계 · Wi-Fi 스캔",
+      lines: [
+        "아래 그림과 같은 화면이 나타나면 Wi-Fi 스캔 버튼을 클릭해서 사용할 Wi-Fi를 고르고 비밀번호를 입력해요.",
+      ],
+      files: ["s06-1.png", "s06-2.png", "s06-3.png", "s06-4.png", "s06-5.jpg"],
+    },
+    {
+      no: 7,
+      title: "5단계 · IP 선택",
+      lines: [
+        "아래 그림과 같이 아래로 드래그해 다음 IP 선택을 클릭한 다음 Wi-Fi IP를 클릭해요.",
+      ],
+      files: ["s07-1.png", "s07-2.png", "s07-3.png"],
+    },
+    {
+      no: 8,
+      title: "6단계 · 설정 저장",
+      lines: [
+        "왼쪽 그림과 같이 Wi-Fi 입력과 IP 설정이 끝나면 ESP32에 설정 저장을 클릭해요.",
+      ],
+      files: ["s08-1.jpg", "s08-2.png"],
+    },
+    {
+      no: 9,
+      title: "7단계 · 플래시",
+      lines: [
+        "왼쪽 그림과 같이 플래시를 클릭해 설정 항목을 ESP32 보드에 저장한 다음, x 표시를 클릭해 종료해요.",
+      ],
+      files: ["s09-1.jpg", "s09-2.png", "s09-3.png"],
+    },
+    {
+      no: 10,
+      title: "8단계 · 연결",
+      lines: ["아래 그림과 같은 화면에서 연결을 클릭해요."],
+      files: ["s10-1.png", "s10-2.png"],
+    },
+    {
+      no: 11,
+      title: "연결 완료 화면",
+      lines: [],
+      files: ["s11-1.png", "s11-2.png"],
+    },
+  ] satisfies ProjectSlide[],
+};
+
+export const PROJECT_UNITS: ProjectUnit[] = [
+  {
+    id: "flood",
+    no: "1",
+    title: "스마트 수해 경보기",
+    problem:
+      "주거 지역과 주요 시설의 수위 상승을 신속하게 감지하지 못해 수해 피해가 발생해요.",
+    goal: "스스로 주변 수위를 실시간으로 인지하고, 위험 수위가 되면 부저로 경고하는 자동화 시스템을 만들어요.",
+    checklist: [
+      "ESP32-S3 보드 (두뇌)",
+      "쉴드 보드 (확장)",
+      "수위 센서 (측정)",
+      "부저 모듈 (경고)",
+      "IoT 대시보드 (통제실)",
+    ],
+    slides: [
+      {
+        no: 12,
+        title: "프로젝트 소개",
+        lines: [
+          "핵심 프로젝트: 스스로 생각하는 '스마트 수해 경보기' 만들기",
+        ],
+        files: ["s12-1.png", "s12-2.png"],
+      },
+      {
+        no: 13,
+        title: "회로 연결",
+        lines: ["ESP32 S3 보드에 수위 센서와 부저 모듈을 연결해요."],
+        files: ["s13-1.png", "s13-2.png"],
+      },
+      {
+        no: 14,
+        title: "manus 열기",
+        lines: ["아래 그림과 같은 화면에서 프롬프트 항목을 클릭해요."],
+        files: ["s14-1.png", "s14-2.png"],
+      },
+      {
+        no: 15,
+        title: "manus 접속",
+        lines: ["아래 그림과 같이 생성형 AI manus에 접속해요. (https://manus.im/app)"],
+        files: ["s15-1.png", "s15-2.png"],
+      },
+      {
+        no: 16,
+        title: "manus 접속 확인",
+        lines: ["아래 그림과 같이 manus에 접속해요."],
+        files: ["s16-1.png", "s16-2.png"],
+      },
+      {
+        no: 17,
+        title: "프롬프트 붙여 넣기",
+        lines: [
+          "아래 그림과 같이 manus에 복사한 프롬프트를 붙여 넣은 다음, 수해 경보기 관련 디자인 프롬프트를 입력해요.",
+        ],
+        files: ["s17-1.png", "s17-2.png"],
+      },
+      {
+        no: 18,
+        title: "AI 프롬프트",
+        lines: ["프롬프트 전문은 아래 박스에서 복사할 수 있어요."],
+        files: ["s18-1.png"],
+      },
+      {
+        no: 19,
+        title: "테스트",
+        lines: [
+          "ESP32에 연결된 수위 센서 위에 물티슈를 이용해 수위 센서 값을 변화시키면, 화면에 물 높이가 변화하며 수해가 발생해요.",
+        ],
+        files: ["s19-1.png", "s19-2.png"],
+      },
+    ],
+    prompt: [
+      "스마트 수해 관제 대시보드를 단일 HTML 파일로 만들어주세요.",
+      "mqtt.min.js CDN을 사용해 ws://localhost:9001 접속 버튼을 상단에 만들어주세요.",
+      "접속 시 토픽 esp32/sensor/soil 을 구독하고, JSON의 percent 수위 값을 읽어 다크 테마 게이지와 제방 단면도 하천 높이에 연동해주세요.",
+      "기준값 70 초과 시 붉은 경보 점멸과 내장 한국어 음성 대피 안내가 1번만 나오게 해주세요.",
+      "외부 파일 없이 브라우저에서 바로 열리는 전체 코드로 작성해 주세요.",
+    ].join("\n"),
+    test: "ESP32에 연결된 수위 센서 위에 물티슈를 이용해 수위 값을 변화시키면, 화면의 물 높이가 올라가며 수해 상황이 재현돼요. 기준값 70을 넘으면 붉은 경보가 점멸돼요.",
+  },
+  {
+    id: "lamp",
+    no: "2",
+    title: "스마트 가로등",
+    problem: "사람이 없는 새벽에도 켜져 있는 가로등은 엄청난 에너지를 낭비해요.",
+    goal: "주변의 밝기를 스스로 인지하고, 필요할 때만 불을 켜는 자동화 시스템을 만들어요.",
+    checklist: [
+      "ESP32-S3 보드 (두뇌)",
+      "쉴드 보드 (확장)",
+      "조도 센서 (눈)",
+      "네오픽셀 (빛)",
+      "IoT 대시보드 (통제실)",
+    ],
+    slides: [
+      {
+        no: 20,
+        title: "프로젝트 소개",
+        lines: [
+          "핵심 프로젝트: 스스로 생각하는 '스마트 가로등' 만들기",
+        ],
+        files: ["s20-1.png", "s20-2.png"],
+      },
+      {
+        no: 21,
+        title: "준비물 리스트",
+        lines: [
+          "하드웨어 구성품과 소프트웨어 환경을 확인하고, PC와의 연결 포트를 확인해요.",
+          "실행 프로그램: RoboFestesp32-1.0.0-amd64.exe",
+        ],
+        files: [
+          "s21-1.png",
+          "s21-2.png",
+          "s21-3.png",
+          "s21-4.jpeg",
+          "s21-5.png",
+        ],
+      },
+      {
+        no: 22,
+        title: "회로 연결",
+        lines: ["ESP32 S3 보드에 조도 센서와 네오픽셀을 연결해요."],
+        files: ["s22-1.png", "s22-2.png"],
+      },
+      {
+        no: 23,
+        title: "manus 열기",
+        lines: ["아래 그림과 같은 화면에서 프롬프트 항목을 클릭해요."],
+        files: ["s23-1.png", "s23-2.png"],
+      },
+      {
+        no: 24,
+        title: "manus 접속",
+        lines: ["아래 그림과 같이 생성형 AI manus에 접속해요. (https://manus.im/app)"],
+        files: ["s24-1.png", "s24-2.png"],
+      },
+      {
+        no: 25,
+        title: "manus 접속 확인",
+        lines: ["아래 그림과 같이 manus에 접속해요."],
+        files: ["s25-1.png", "s25-2.png"],
+      },
+      {
+        no: 26,
+        title: "프롬프트 붙여 넣기",
+        lines: [
+          "아래 그림과 같이 manus에 복사한 프롬프트를 붙여 넣은 다음, 스마트 가로등 관련 디자인 프롬프트를 입력해요.",
+        ],
+        files: ["s26-1.png", "s26-2.png"],
+      },
+      {
+        no: 27,
+        title: "AI 프롬프트",
+        lines: ["프롬프트 전문은 아래 박스에서 복사할 수 있어요."],
+        files: ["s27-1.png"],
+      },
+      {
+        no: 28,
+        title: "테스트",
+        lines: [
+          "ESP32에 연결된 조도 센서에 손을 올려 어둡게 만들면, 화면 속 가로등에 불이 켜져요.",
+        ],
+        files: ["s28-1.png", "s28-2.png"],
+      },
+    ],
+    prompt: [
+      "스마트 가로등 자동 제어 시스템을 단일 HTML 파일로 만들어 주세요.",
+      "mqtt.min.js CDN을 사용하고, 상단에 ws://localhost:9001 접속 버튼과 '조도센서 GPIO 7' 라벨을 배치해 주세요.",
+      "화면 전체에 사실적인 가로등 시뮬레이션(원경 도시, 도로, 가로등 광원 효과)을 크게 구성하고, 수동 제어 버튼과 실시간 로그창은 제외해 주세요.",
+      "실시간 조도 센서 측정값(수치, 게이지 바)은 화면 하단부에 배치해 주세요.",
+      "접속 시 esp32/sensor/cds 토픽을 구독해 JSON의 percent 값을 실시간 반영해 주세요.",
+      "조도 percent 값이 30 미만이면 밤하늘 배경 전환과 가로등 자동 점등(esp32/control/lamp 로 \"ON\" 발행), 30 이상이면 낮 하늘 배경 전환과 가로등 자동 소등(\"OFF\" 발행)이 실행되게 해 주세요.",
+      "외부 파일 없이 브라우저에서 바로 실행 가능한 전체 코드로 작성해 주세요.",
+    ].join("\n"),
+    test: "ESP32에 연결된 조도 센서에 손을 올려 어둡게 만들면, 화면 속 가로등에 불이 켜져요. 손을 치우면 다시 소등돼요.",
+  },
+  {
+    id: "alarm",
+    no: "3",
+    title: "스마트 도난경보기",
+    problem:
+      "비인가자의 접근이나 침입을 신속하게 감지하지 못해 도난·보안 피해가 발생해요.",
+    goal: "침입자와의 거리를 실시간으로 감지하고, 위험 범위에 접근하면 부저로 경고하는 자동화 시스템을 만들어요.",
+    checklist: [
+      "ESP32-S3 보드 (두뇌)",
+      "쉴드 보드 (확장)",
+      "초음파 센서 (거리)",
+      "부저 모듈 (경고음)",
+      "IoT 대시보드 (통제실)",
+    ],
+    slides: [
+      {
+        no: 29,
+        title: "프로젝트 소개",
+        lines: [
+          "핵심 프로젝트: 스스로 생각하는 '스마트 도난경보기' 만들기",
+        ],
+        files: ["s29-1.png", "s29-2.png"],
+      },
+      {
+        no: 30,
+        title: "준비물 리스트",
+        lines: [
+          "하드웨어 구성품과 소프트웨어 환경을 확인하고, PC와의 연결 포트를 확인해요.",
+          "실행 프로그램: RoboFestesp32-1.0.0-amd64.exe",
+        ],
+        files: [
+          "s30-1.png",
+          "s30-2.png",
+          "s30-3.png",
+          "s30-4.png",
+          "s30-5.png",
+        ],
+      },
+      {
+        no: 31,
+        title: "회로 연결",
+        lines: ["ESP32 S3 보드에 초음파 센서와 부저 모듈을 연결해요."],
+        files: ["s31-1.png", "s31-2.png"],
+      },
+      {
+        no: 32,
+        title: "manus 열기",
+        lines: ["아래 그림과 같은 화면에서 프롬프트 항목을 클릭해요."],
+        files: ["s32-1.png", "s32-2.png"],
+      },
+      {
+        no: 33,
+        title: "manus 접속",
+        lines: ["아래 그림과 같이 생성형 AI manus에 접속해요. (https://manus.im/app)"],
+        files: ["s33-1.png", "s33-2.png"],
+      },
+      {
+        no: 34,
+        title: "manus 접속 확인",
+        lines: ["아래 그림과 같이 manus에 접속해요."],
+        files: ["s34-1.png", "s34-2.png"],
+      },
+      {
+        no: 35,
+        title: "프롬프트 붙여 넣기",
+        lines: [
+          "아래 그림과 같이 manus에 복사한 프롬프트를 붙여 넣은 다음, 도난 경보기 관련 디자인 프롬프트를 입력해요.",
+        ],
+        files: ["s35-1.png", "s35-2.png"],
+      },
+      {
+        no: 36,
+        title: "AI 프롬프트",
+        lines: ["프롬프트 전문은 아래 박스에서 복사할 수 있어요."],
+        files: ["s36-1.png"],
+      },
+      {
+        no: 37,
+        title: "테스트",
+        lines: [
+          "ESP32에 연결된 초음파 센서에 손을 올려 거리 값을 만들면, 화면에서 도난경보기가 동작해요.",
+        ],
+        files: ["s37-1.png", "s37-2.png"],
+      },
+      {
+        no: 38,
+        title: "마무리",
+        lines: [],
+        files: ["s38-1.png"],
+      },
+    ],
+    prompt: [
+      "초음파 스마트 물체 도난경보기를 단일 HTML 파일로 만들어 주세요.",
+      "mqtt.min.js CDN을 사용하고, 상단에 ws://localhost:9001 접속 버튼과 '초음파센서 Trig:5 Echo:18' 라벨을 배치해 주세요.",
+      "물체 감시 시뮬레이션 화면은 사실적인 그래픽(보호 물체 및 레이저 감시 뷰)으로 크게 구성하고, 측정된 실시간 거리(cm) 값과 게이지는 화면 하단부에 직관적으로 배치해 주세요.",
+      "접속 시 esp32/sensor/ultrasonic 토픽을 구독하여 JSON의 distance(cm) 값을 실시간으로 반영해 주세요.",
+      "보호 중인 물체가 이탈/도난당해 측정 거리가 30cm를 초과하면 화면 붉은색 경보 점멸, 브라우저 비프음 재생, esp32/control/led로 \"ON\"을 발행해 주세요. 물체가 다시 놓여 30cm 이하가 되면 정상 상태로 복귀하며 \"OFF\"를 발행하고, 수동 경보 해제 버튼과 하단 1줄 크기의 컴팩트한 MQTT 실시간 수신 로그창도 포함해 주세요.",
+      "외부 파일 없이 브라우저에서 바로 실행 가능한 전체 코드로 작성해 주세요.",
+    ].join("\n"),
+    test: "ESP32에 연결된 초음파 센서에서 보호 물체를 치우면 거리가 30cm를 넘어 붉은 경보·비프음이 울려요. 물체를 다시 놓으면 정상 상태로 돌아와요.",
   },
 ];
