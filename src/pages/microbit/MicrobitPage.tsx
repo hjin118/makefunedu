@@ -73,6 +73,7 @@ function Note({
 }
 
 function SlideBlock({ slide }: { slide: Slide }) {
+  const text = slide.text.filter((line) => !/^\d{1,3}$/.test(line.trim()));
   return (
     <figure className="mb-slide">
       <figcaption className="mb-slide-cap">
@@ -88,9 +89,9 @@ function SlideBlock({ slide }: { slide: Slide }) {
           decoding="async"
         />
       ))}
-      {slide.text.length > 0 ? (
+      {text.length > 0 ? (
         <div className="mb-slide-text">
-          {slide.text.map((line) => (
+          {text.map((line) => (
             <p key={line}>{line}</p>
           ))}
         </div>

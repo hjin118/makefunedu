@@ -93,15 +93,16 @@ function JsonBlock({ topic, json }: { topic: string; json: string }) {
 /* ---------- ⑪ 프로젝트 실습 ---------- */
 
 function SlideBlock({ slide }: { slide: ProjectSlide }) {
+  const lines = slide.lines.filter((line) => !/^\d{1,3}$/.test(line.trim()));
   return (
     <article className="card esp32-slide-block">
       <header className="esp32-slide-block-head">
         <span className="esp32-slide-badge">슬라이드 {slide.no}</span>
         <strong>{slide.title}</strong>
       </header>
-      {slide.lines.length > 0 ? (
+      {lines.length > 0 ? (
         <ul className="esp32-slide-lines">
-          {slide.lines.map((line) => (
+          {lines.map((line) => (
             <li key={line}>{line}</li>
           ))}
         </ul>

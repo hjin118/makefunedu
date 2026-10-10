@@ -933,7 +933,7 @@ export const PROJECT_SETUP = {
       lines: [
         "아래 그림과 같은 화면이 나타나면 Wi-Fi 스캔 버튼을 클릭해서 사용할 Wi-Fi를 고르고 비밀번호를 입력해요.",
       ],
-      files: ["s06-1.png", "s06-2.png", "s06-3.png", "s06-4.png", "s06-5.jpg"],
+      files: ["s06-1.png", "s06-2.png", "s06-5.jpg"],
     },
     {
       no: 7,
