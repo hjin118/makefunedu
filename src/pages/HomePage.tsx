@@ -85,25 +85,6 @@ const RESOURCES: ResourceCard[] = [
     },
   },
   {
-    tag: "슬라이드·인포그래픽 만들기",
-    title: "노트북LM 슬라이드 프롬프트",
-    short: "노트북LM으로 슬라이드·인포그래픽을 만드는 프롬프트예요. 디자인을 고르면 프롬프트가 채워져요.",
-    cta: "디자인 고르러 가기 →",
-    to: "/slides",
-    tile: {
-      from: "#f472b6",
-      to: "#db2777",
-      glyph: (
-        <>
-          <rect x="3" y="4" width="18" height="12" rx="2" />
-          <path d="M12 16v4" />
-          <path d="M8 21h8" />
-          <path d="M10 8.5v3l2.5 1.5L15 11.5l-2.5-1.5L10 8.5z" fill="#ffffff" strokeWidth="1" />
-        </>
-      ),
-    },
-  },
-  {
     tag: "같이 만들기 · 작업지시서",
     title: "학습 사이트 만들기 레퍼런스 — 손발전기",
     short:

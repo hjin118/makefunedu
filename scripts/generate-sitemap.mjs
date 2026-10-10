@@ -14,7 +14,6 @@ const ROUTES = [
   "/",
   "/setup",
   "/prompt",
-  "/slides",
   "/handgen",
   "/gamegen",
   "/coding",

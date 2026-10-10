@@ -7,7 +7,6 @@ const TITLES: Array<[string, string]> = [
   ["/", BASE_TITLE],
   ["/setup", "AI 맞춤 설정 | 메이크펀에듀"],
   ["/prompt", "다시 묻는 AI 교실 | 메이크펀에듀"],
-  ["/slides", "슬라이드 프롬프트 | 메이크펀에듀"],
   ["/handgen", "학습 사이트 만들기 | 메이크펀에듀"],
   ["/gamegen", "바이브코딩 게임 만들기 | 메이크펀에듀"],
   ["/coding", "코딩 단원 | 메이크펀에듀"],

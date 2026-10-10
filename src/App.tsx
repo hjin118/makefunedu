@@ -4,7 +4,6 @@ import RouteTitles from "./components/RouteTitles";
 import HomePage from "./pages/HomePage";
 import SetupPage from "./pages/SetupPage";
 import PromptPage from "./pages/PromptPage";
-import SlidesPage from "./pages/SlidesPage";
 import HandgenPage from "./pages/HandgenPage";
 import GamegenPage from "./pages/GamegenPage";
 import CodePage from "./pages/code/CodePage";
@@ -41,7 +40,6 @@ export default function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/setup" element={<SetupPage />} />
         <Route path="/prompt" element={<PromptPage />} />
-        <Route path="/slides" element={<SlidesPage />} />
         <Route path="/handgen" element={<HandgenPage />} />
         <Route path="/gamegen" element={<GamegenPage />} />
         <Route path="/coding" element={<CodePage />} />
