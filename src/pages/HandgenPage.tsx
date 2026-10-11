@@ -291,6 +291,14 @@ const TEMPLATE_TABS = TEMPLATES.map((template) => ({
   label: template.tabLabel,
 }));
 
+const TEMPLATE_VISUALS: Record<TemplateId, string> = {
+  handgen: "dynamo",
+  clock: "clock",
+  water: "water-states",
+  photosynthesis: "photosynthesis",
+  linear: "linear-graph",
+};
+
 function initialOrders(): Record<TemplateId, string> {
   return {
     handgen: WORK_ORDER,
@@ -378,6 +386,12 @@ export default function HandgenPage() {
           id={`panel-${activeTemplate}`}
           aria-labelledby={`tab-${activeTemplate}`}
         >
+          <img
+            className="handgen-template-visual"
+            src={`${import.meta.env.BASE_URL}images/illustrations/${TEMPLATE_VISUALS[activeTemplate]}.svg`}
+            alt=""
+            aria-hidden="true"
+          />
           <Card>
             <p>
               {active.name}을 부탁하는 지시서예요. 학급 상황에 맞게 고친 뒤 AI에게

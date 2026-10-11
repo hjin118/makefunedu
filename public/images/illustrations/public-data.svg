@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <!-- 데이터 클라우드 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M150 88a26 26 0 0 1 8-50 34 34 0 0 1 66-4 26 26 0 0 1 30 42z" fill="#7dd3fc"/>
+  </g>
+  <!-- 클라우드 안 데이터베이스 -->
+  <g stroke="#1e293b" stroke-width="3" stroke-linejoin="round">
+    <path d="M180 52v22c0 5 9 9 20 9s20-4 20-9V52" fill="#ffffff"/>
+    <ellipse cx="200" cy="52" rx="20" ry="8" fill="#ffffff"/>
+    <path d="M180 62c0 5 9 9 20 9s20-4 20-9" fill="none"/>
+  </g>
+  <!-- 연결 점선 -->
+  <g stroke="#94a3b8" stroke-width="3" stroke-linecap="round" stroke-dasharray="1 9">
+    <path d="M150 96 96 120" fill="none"/>
+    <path d="M252 96 296 116" fill="none"/>
+  </g>
+  <!-- 학교 건물 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="42" y="126" width="88" height="52" rx="6" fill="#ffffff"/>
+    <path d="M34 126 86 96l52 30z" fill="#f43f5e"/>
+    <rect x="74" y="152" width="24" height="26" rx="4" fill="#f59e0b"/>
+    <rect x="52" y="136" width="14" height="14" rx="3" fill="#e0f2fe"/>
+    <rect x="106" y="136" width="14" height="14" rx="3" fill="#e0f2fe"/>
+  </g>
+  <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
+    <line x1="86" y1="96" x2="86" y2="82" fill="none"/>
+  </g>
+  <path d="M86 82h14l-5 5 5 5H86z" fill="#f59e0b" stroke="#1e293b" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- API 열쇠 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <circle cx="300" cy="152" r="16" fill="#fcd34d"/>
+    <circle cx="300" cy="152" r="6.5" fill="#f8fafc"/>
+    <path d="M312 144l26 26" fill="none" stroke-width="9" stroke="#fcd34d"/>
+    <path d="M312 144l26 26" fill="none" stroke-width="15" stroke="none"/>
+  </g>
+  <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
+    <path d="M330 162l8 8" fill="none"/>
+    <path d="M322 170l7 7" fill="none"/>
+  </g>
+  <rect x="316" y="168" width="9" height="9" rx="2" fill="#fcd34d" stroke="#1e293b" stroke-width="2.5"/>
+  <rect x="338" y="176" width="9" height="9" rx="2" fill="#fcd34d" stroke="#1e293b" stroke-width="2.5"/>
+  <!-- API 라벨 -->
+  <rect x="264" y="112" width="52" height="24" rx="12" fill="#ede9fe" stroke="#8b5cf6" stroke-width="2.5"/>
+  <text x="290" y="129" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6">API</text>
+  <!-- 반짝임 -->
+  <path d="M128 30q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10z" fill="#fcd34d"/>
+  <path d="M330 52q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>

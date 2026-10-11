@@ -185,6 +185,13 @@ export default function PhysicalAiPage() {
         }
       />
 
+      <img
+        className="esp32-page-hero"
+        src={`${import.meta.env.BASE_URL}images/illustrations/esp32-hero.svg`}
+        alt=""
+        aria-hidden="true"
+      />
+
       <nav className="esp32-nav" aria-label="섹션 이동">
         {SECTION_NAV.map((item) => (
           <a key={item.id} href={`#esp32-${item.id}`}>

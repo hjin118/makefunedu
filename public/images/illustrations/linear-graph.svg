@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-hidden="true">
+  <!-- 격자 -->
+  <g stroke="#e2e8f0" stroke-width="2">
+    <path d="M72 40v124M104 40v124M136 40v124M168 40v124"/>
+    <path d="M40 72h140M40 104h140M40 136h140"/>
+  </g>
+  <!-- 좌표축 -->
+  <g stroke="#1e293b" stroke-width="5" stroke-linecap="round">
+    <path d="M40 168V40" fill="none"/>
+    <path d="M40 168h136" fill="none"/>
+  </g>
+  <path d="M40 40l-6 11h12z" fill="#1e293b"/>
+  <path d="M176 168l-11-6v12z" fill="#1e293b"/>
+  <!-- 일차함수 직선 -->
+  <path d="M62 148L156 62" fill="none" stroke="#f43f5e" stroke-width="5" stroke-linecap="round"/>
+  <path d="M156 62l3 14-14-3" fill="none" stroke="#f43f5e" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- 좌표 점 -->
+  <g stroke="#94a3b8" stroke-width="2.5" stroke-dasharray="4 6">
+    <path d="M118 168v-46" fill="none"/>
+    <path d="M40 122h78" fill="none"/>
+  </g>
+  <circle cx="118" cy="122" r="8" fill="#f59e0b" stroke="#1e293b" stroke-width="3.5"/>
+  <!-- 기울기 삼각형 -->
+  <path d="M84 138h26v-24" fill="none" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="3 5" stroke-linecap="round"/>
+  <!-- 반짝임 -->
+  <path d="M162 110q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10z" fill="#fcd34d"/>
+  <path d="M58 56q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>

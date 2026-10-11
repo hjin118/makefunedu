@@ -114,3 +114,31 @@
   font-weight: 700;
   color: var(--accent);
 }
+
+/* ---- 장르 일러스트 타일 ---- */
+
+.gamegen-genre-head {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.gamegen-genre-head p {
+  margin: 0;
+}
+
+.gamegen-genre-visual {
+  flex-shrink: 0;
+  width: 110px;
+  height: auto;
+  border-radius: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+}
+
+@media (max-width: 640px) {
+  .gamegen-genre-visual {
+    width: 84px;
+  }
+}

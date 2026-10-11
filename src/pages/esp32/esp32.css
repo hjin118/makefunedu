@@ -601,3 +601,14 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- 페이지 히어로 일러스트 ---- */
+
+.esp32-page-hero {
+  display: block;
+  width: 100%;
+  max-height: 140px;
+  object-fit: contain;
+  margin: 0 0 14px;
+  border-radius: 14px;
+}

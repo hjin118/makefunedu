@@ -312,6 +312,14 @@ export default function CodePage() {
       />
 
       <div role="tabpanel" id={`panel-${subjectId}`} aria-labelledby={`tab-${subjectId}`}>
+        {!selectedUnit ? (
+          <img
+            className="code-subject-visual"
+            src={`${import.meta.env.BASE_URL}images/illustrations/${subjectId === "python" ? "python-hero" : "js-hero"}.svg`}
+            alt=""
+            aria-hidden="true"
+          />
+        ) : null}
         {selectedUnit ? (
           <CodeUnitDetail
             unit={selectedUnit}

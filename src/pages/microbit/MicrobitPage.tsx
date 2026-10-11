@@ -125,6 +125,13 @@ export default function MicrobitPage() {
         }
       />
 
+      <img
+        className="mb-page-hero"
+        src={`${import.meta.env.BASE_URL}images/illustrations/microbit-hero.svg`}
+        alt=""
+        aria-hidden="true"
+      />
+
       <nav className="mb-nav" aria-label="섹션 이동">
         {SECTION_NAV.map((item) => (
           <a key={item.id} href={`#microbit-${item.id}`}>

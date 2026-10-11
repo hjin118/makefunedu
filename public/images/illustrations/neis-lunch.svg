@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <!-- 급식 식판 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="46" y="92" width="212" height="84" rx="16" fill="#e0f2fe"/>
+    <path d="M104 96v76M162 96v76" fill="none" stroke-width="3"/>
+  </g>
+  <!-- 밥 -->
+  <g stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M56 128a22 22 0 0 1 44 0z" fill="#ffffff"/>
+    <path d="M52 128h52l-5 14a10 10 0 0 1-9 7H66a10 10 0 0 1-9-7z" fill="#7dd3fc"/>
+  </g>
+  <circle cx="70" cy="116" r="2.5" fill="#e2e8f0"/>
+  <circle cx="86" cy="112" r="2.5" fill="#e2e8f0"/>
+  <!-- 국 -->
+  <g stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M114 130h42a21 21 0 0 1-42 0z" fill="#fda4af"/>
+    <path d="M120 130c0-14 30-14 30 0" fill="none" stroke-width="3"/>
+  </g>
+  <g stroke="#94a3b8" stroke-width="3" stroke-linecap="round" fill="none">
+    <path d="M128 116q-4-6 0-12"/>
+    <path d="M142 116q-4-6 0-12"/>
+  </g>
+  <!-- 반찬 -->
+  <g stroke="#1e293b" stroke-width="3" stroke-linejoin="round">
+    <rect x="172" y="116" width="30" height="22" rx="5" fill="#f59e0b"/>
+    <rect x="172" y="140" width="30" height="16" rx="5" fill="#6ee7b7"/>
+    <rect x="206" y="120" width="24" height="16" rx="5" fill="#fcd34d"/>
+    <rect x="206" y="140" width="24" height="16" rx="5" fill="#c4b5fd"/>
+  </g>
+  <!-- 우유 -->
+  <g stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M288 104h30l8 12v48a6 6 0 0 1-6 6h-34a6 6 0 0 1-6-6v-48z" fill="#ffffff"/>
+    <path d="M288 104l-8 12h38" fill="#e0f2fe"/>
+    <path d="M280 132h46" fill="none"/>
+  </g>
+  <path d="M298 140h10v14h-10z" fill="#0ea5e9"/>
+  <!-- 학교 모자 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <ellipse cx="298" cy="52" rx="42" ry="10" fill="#1e293b"/>
+    <path d="M262 48a36 26 0 0 1 72 0z" fill="#334155"/>
+  </g>
+  <path d="M270 40a28 18 0 0 1 56 0" fill="none" stroke="#fcd34d" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 반짝임 -->
+  <path d="M268 78q2 7 9 9-7 2-9 9-2-7-9-9 7-2 9-9z" fill="#fcd34d"/>
+  <path d="M344 90q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>

@@ -197,6 +197,38 @@ export const FREE_PROMPTS: PromptItem[] = [
 
 /* ---------- ④ API 키를 사용하는 경우 — 지도 API 개념 ---------- */
 
+export type KeyStep = { no: string; title: string; desc?: string };
+
+export const PORTAL_KEY_STEPS: KeyStep[] = [
+  {
+    no: "1",
+    title: "공공데이터포털(www.data.go.kr) 접속 후 회원가입",
+    desc: "구글·네이버·카카오 계정 연동 가능",
+  },
+  {
+    no: "2",
+    title: '상단 검색창에 "대기오염 정보 조회" 입력',
+    desc: "제공기관: 한국환경공단",
+  },
+  {
+    no: "3",
+    title: "상세 페이지에서 [활용신청] 클릭",
+    desc: '활용 목적에 "교육" 정도만 적어도 돼요',
+  },
+  {
+    no: "4",
+    title: "이 API는 자동 승인이라 기다릴 필요 없어요",
+  },
+  {
+    no: "5",
+    title: "마이페이지 → 오픈 API → 인증키 발급 내역 → 일반 인증키(UTF-8) 복사",
+  },
+  {
+    no: "6",
+    title: "URL 뒤에 ?serviceKey=복사한_인증키 형태로 붙여 호출",
+  },
+];
+
 export type MapApiCard = {
   title: string;
   rows: Array<[string, string]>;

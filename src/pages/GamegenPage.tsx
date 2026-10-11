@@ -469,6 +469,15 @@ const GENRES = [
 
 const GAME_TABS = GENRES.map((genre) => ({ id: genre.id, label: genre.tabLabel }));
 
+const GENRE_VISUALS: Record<GenreId, string> = {
+  dodge: "dodge-game",
+  click: "click-game",
+  quiz: "quiz-game",
+  shooting: "shooter-game",
+  maze: "maze-game",
+  memory: "card-game",
+};
+
 const FLOW_STEPS = [
   {
     title: "주제 정하기",
@@ -636,7 +645,15 @@ export default function GamegenPage() {
 
       <section className="section" aria-labelledby="gamegen-order">
         <h2 id="gamegen-order">작업지시서 (편집해서 복사하세요)</h2>
-        <p>{active.explain}</p>
+        <div className="gamegen-genre-head">
+          <img
+            className="gamegen-genre-visual"
+            src={`${import.meta.env.BASE_URL}images/illustrations/${GENRE_VISUALS[activeGenre]}.svg`}
+            alt=""
+            aria-hidden="true"
+          />
+          <p>{active.explain}</p>
+        </div>
         <Tabs
           tabs={GAME_TABS}
           active={activeGenre}

@@ -99,3 +99,19 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ---- 템플릿 일러스트 (작업지시서 위) ---- */
+
+.handgen-template-visual {
+  display: block;
+  height: 88px;
+  width: auto;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+}
+
+@media (max-width: 640px) {
+  .handgen-template-visual {
+    height: 72px;
+  }
+}

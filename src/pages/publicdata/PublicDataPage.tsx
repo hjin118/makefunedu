@@ -11,33 +11,55 @@ import {
   KEY_PROMPTS,
   MAP_API_CARDS,
   NEIS_ROWS,
+  PORTAL_KEY_STEPS,
   SECTION_NAV,
 } from "./data";
 
 /* ---------- 작은 빌딩 블록 ---------- */
+
+const PD_API_TILES = [
+  { label: "날씨", file: "weather-api" },
+  { label: "대기질", file: "air-quality" },
+  { label: "급식", file: "neis-lunch" },
+  { label: "지도", file: "map-pin" },
+] as const;
 
 function Sec({
   id,
   no,
   title,
   intro,
+  visual,
   children,
 }: {
   id: string;
   no: string;
   title: string;
   intro?: string;
+  visual?: string;
   children: ReactNode;
 }) {
   return (
     <section id={`pd-${id}`} className="section pd-section">
-      <h2>
-        <span className="pd-sec-no" aria-hidden="true">
-          {no}
-        </span>
-        {title}
-      </h2>
-      {intro ? <p className="page-intro">{intro}</p> : null}
+      <div className="pd-sec-head">
+        <div>
+          <h2>
+            <span className="pd-sec-no" aria-hidden="true">
+              {no}
+            </span>
+            {title}
+          </h2>
+          {intro ? <p className="page-intro">{intro}</p> : null}
+        </div>
+        {visual ? (
+          <img
+            className="pd-sec-visual"
+            src={`${import.meta.env.BASE_URL}images/illustrations/${visual}.svg`}
+            alt=""
+            aria-hidden="true"
+          />
+        ) : null}
+      </div>
       {children}
     </section>
   );
@@ -107,7 +129,7 @@ export default function PublicDataPage() {
       </nav>
 
       {/* ① 개념 */}
-      <Sec id="concept" no="①" title="공공데이터란?">
+      <Sec id="concept" no="①" title="공공데이터란?" visual="public-data">
         <div className="grid-2">
           {CONCEPT_CARDS.map((card) => (
             <div className="card" key={card.title}>
@@ -153,6 +175,19 @@ export default function PublicDataPage() {
         title="활용 API 소개 표"
         intro="이번 단원에서 만나는 대표 API 4종이에요. 어떤 데이터를 주고, 대시보드에서 어떤 역할을 하는지 살펴 봐요."
       >
+        <div className="pd-api-tiles">
+          {PD_API_TILES.map((tile) => (
+            <div className="pd-api-tile" key={tile.file}>
+              <img
+                src={`${import.meta.env.BASE_URL}images/illustrations/${tile.file}.svg`}
+                alt=""
+                aria-hidden="true"
+              />
+              <span>{tile.label}</span>
+            </div>
+          ))}
+        </div>
+
         <div className="table-wrap">
           <table className="simple">
             <thead>
@@ -274,6 +309,22 @@ export default function PublicDataPage() {
             서비스키를 입력하면 실시간 대기질 데이터를 호출할 수 있어요. 브라우저에서 직접 호출하면{" "}
             <strong>CORS 제한</strong>이 있어서, allorigins 프록시를 통해 호출하는 확장 모드로
             구성해요.
+          </p>
+        </div>
+
+        <div className="card">
+          <h3>공공데이터포털 API 키 발급하기 (6단계)</h3>
+          <ol className="pd-steps">
+            {PORTAL_KEY_STEPS.map((step) => (
+              <li key={step.no}>
+                <strong>{step.no}.</strong> {step.title}
+                {step.desc ? <span className="pd-step-desc"> — {step.desc}</span> : null}
+              </li>
+            ))}
+          </ol>
+          <p className="footnote pd-steps-note">
+            인증키 하나로 포털의 다른 공공 API도 같은 방식으로 신청해 쓸 수 있고, 노출되면 마이페이지에서
+            재발급할 수 있어요.
           </p>
         </div>
 

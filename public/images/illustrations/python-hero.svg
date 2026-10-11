@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <ellipse cx="180" cy="184" rx="140" ry="9" fill="#e2e8f0"/>
+  <!-- 코드 창 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="28" y="42" width="192" height="126" rx="12" fill="#1e293b"/>
+    <path d="M28 66h192" fill="none"/>
+  </g>
+  <circle cx="46" cy="54" r="5" fill="#f43f5e"/>
+  <circle cx="62" cy="54" r="5" fill="#f59e0b"/>
+  <circle cx="78" cy="54" r="5" fill="#10b981"/>
+  <g stroke-linecap="round" fill="#334155">
+    <rect x="44" y="80" width="52" height="9" rx="4.5" fill="#7dd3fc"/>
+    <rect x="104" y="80" width="34" height="9" rx="4.5" fill="#64748b"/>
+    <rect x="58" y="100" width="70" height="9" rx="4.5" fill="#64748b"/>
+    <rect x="136" y="100" width="40" height="9" rx="4.5" fill="#fcd34d"/>
+    <rect x="58" y="120" width="46" height="9" rx="4.5" fill="#64748b"/>
+    <rect x="112" y="120" width="30" height="9" rx="4.5" fill="#7dd3fc"/>
+    <rect x="44" y="140" width="60" height="9" rx="4.5" fill="#6ee7b7"/>
+  </g>
+  <rect x="146" y="136" width="56" height="20" rx="10" fill="#0ea5e9" stroke="#1e293b" stroke-width="2.5"/>
+  <text x="174" y="150" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#ffffff">Python</text>
+  <!-- 파란뱀 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M268 162q-24-2-24-22 0-18 22-18t22-18q0-18-22-20" fill="none" stroke="#0ea5e9" stroke-width="24" stroke-linecap="round"/>
+    <circle cx="266" cy="58" r="24" fill="#0ea5e9"/>
+  </g>
+  <path d="M252 66q-6 14-18 16" fill="none" stroke="#0ea5e9" stroke-width="24" stroke-linecap="round"/>
+  <g fill="#ffffff">
+    <circle cx="262" cy="52" r="7.5"/>
+    <circle cx="280" cy="52" r="7.5"/>
+  </g>
+  <circle cx="263.5" cy="53" r="3.5" fill="#1e293b"/>
+  <circle cx="281.5" cy="53" r="3.5" fill="#1e293b"/>
+  <path d="M262 68q9 7 18 0" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M288 62l12-4-12-2z" fill="#f43f5e" stroke="#1e293b" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M246 84q-2 5-7 7 5 2 7 7 2-5 7-7-5-2-7-7z" fill="#f43f5e"/>
+  <!-- 배 띠 -->
+  <path d="M254 140q12 6 24 0M262 120q10 5 20 0" fill="none" stroke="#e0f2fe" stroke-width="4" stroke-linecap="round"/>
+  <!-- 반짝임 -->
+  <path d="M322 96q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10z" fill="#fcd34d"/>
+  <path d="M336 40q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>
