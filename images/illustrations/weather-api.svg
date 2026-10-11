@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <!-- 해 -->
+  <g stroke="#1e293b" stroke-width="3" stroke-linecap="round">
+    <circle cx="66" cy="60" r="27" fill="#fcd34d"/>
+    <g fill="none" stroke-width="4.5">
+      <path d="M66 18v-10"/><path d="M66 112v-10"/>
+      <path d="M24 60H14"/><path d="M118 60h-10"/>
+      <path d="M36 30l-7-7"/><path d="M103 97l-7-7"/>
+      <path d="M36 90l-7 7"/><path d="M103 23l-7 7"/>
+    </g>
+  </g>
+  <circle cx="58" cy="52" r="7" fill="#fef3c7"/>
+  <!-- 구름 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M138 92a24 24 0 0 1 10-46 32 32 0 0 1 62-2 24 24 0 0 1 26 40z" fill="#e0f2fe"/>
+  </g>
+  <path d="M162 62a18 18 0 0 1 16-14" fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="round"/>
+  <!-- 비 -->
+  <g stroke="#1e293b" stroke-width="3" stroke-linejoin="round">
+    <path d="M156 108c5 8 5 13 0 16-5-3-5-8 0-16z" fill="#0ea5e9"/>
+    <path d="M186 108c5 8 5 13 0 16-5-3-5-8 0-16z" fill="#0ea5e9"/>
+    <path d="M216 108c5 8 5 13 0 16-5-3-5-8 0-16z" fill="#0ea5e9"/>
+  </g>
+  <g stroke="#94a3b8" stroke-width="3" stroke-linecap="round">
+    <path d="M150 136l-4 10" fill="none"/>
+    <path d="M186 138l-4 10" fill="none"/>
+    <path d="M222 136l-4 10" fill="none"/>
+  </g>
+  <!-- 온도계 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M296 52v66a18 18 0 1 0 20 0V52a10 10 0 0 0-20 0z" fill="#ffffff"/>
+  </g>
+  <path d="M302 108v-56a4 4 0 0 1 8 0v56a11 11 0 0 1 0 14z" fill="#f43f5e"/>
+  <circle cx="306" cy="128" r="11" fill="#f43f5e" stroke="#1e293b" stroke-width="3"/>
+  <g stroke="#64748b" stroke-width="2.5" stroke-linecap="round">
+    <path d="M286 62h6" fill="none"/>
+    <path d="M286 76h6" fill="none"/>
+    <path d="M286 90h6" fill="none"/>
+    <path d="M286 104h6" fill="none"/>
+  </g>
+  <text x="306" y="34" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1e293b">°C</text>
+  <!-- 반짝임 -->
+  <path d="M128 30q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10z" fill="#7dd3fc"/>
+  <path d="M258 34q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#fcd34d"/>
+</svg>

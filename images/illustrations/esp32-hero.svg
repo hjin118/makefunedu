@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <ellipse cx="180" cy="184" rx="150" ry="9" fill="#e2e8f0"/>
+  <!-- ESP32 보드 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="34" y="66" width="178" height="96" rx="12" fill="#334155"/>
+  </g>
+  <!-- USB-C -->
+  <rect x="24" y="102" width="20" height="24" rx="5" fill="#cbd5e1" stroke="#1e293b" stroke-width="3"/>
+  <!-- 칩 -->
+  <g stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round">
+    <rect x="108" y="92" width="56" height="46" rx="6" fill="#94a3b8"/>
+    <rect x="122" y="105" width="28" height="20" rx="3" fill="#1e293b"/>
+  </g>
+  <!-- 헤더 핀 -->
+  <g fill="#fcd34d">
+    <circle cx="62" cy="146" r="4"/><circle cx="80" cy="146" r="4"/>
+    <circle cx="98" cy="146" r="4"/><circle cx="116" cy="146" r="4"/>
+    <circle cx="134" cy="146" r="4"/><circle cx="152" cy="146" r="4"/>
+    <circle cx="170" cy="146" r="4"/><circle cx="188" cy="146" r="4"/>
+  </g>
+  <!-- 안테나 -->
+  <path d="M196 66q0-16 16-16t16 16" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M188 58q4-18 24-24" fill="none" stroke="#1e293b" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- LED -->
+  <circle cx="196" cy="112" r="5" fill="#f59e0b" stroke="#1e293b" stroke-width="2.5"/>
+  <circle cx="196" cy="112" r="10" fill="none" stroke="#fcd34d" stroke-width="3" opacity="0.6"/>
+  <!-- 와이파이 -->
+  <g fill="none" stroke="#7dd3fc" stroke-width="4" stroke-linecap="round">
+    <path d="M226 118a10 10 0 0 1 0-14"/>
+    <path d="M236 126a24 24 0 0 1 0-30"/>
+    <path d="M246 134a38 38 0 0 1 0-46"/>
+  </g>
+  <circle cx="238" cy="122" r="4" fill="#0ea5e9" stroke="#1e293b" stroke-width="2.5"/>
+  <!-- 허스키렌즈 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="254" y="62" width="92" height="76" rx="16" fill="#f8fafc"/>
+    <circle cx="300" cy="98" r="24" fill="#1e293b"/>
+  </g>
+  <circle cx="300" cy="98" r="15" fill="#0ea5e9"/>
+  <circle cx="300" cy="98" r="7" fill="#1e293b"/>
+  <circle cx="294" cy="90" r="4.5" fill="#ffffff"/>
+  <circle cx="272" cy="124" r="6" fill="#f59e0b" stroke="#1e293b" stroke-width="3"/>
+  <circle cx="328" cy="124" r="6" fill="#10b981" stroke="#1e293b" stroke-width="3"/>
+  <path d="M254 76h92" stroke="#e2e8f0" stroke-width="2.5"/>
+  <!-- 반짝임 -->
+  <path d="M66 44q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10z" fill="#fcd34d"/>
+  <path d="M330 152q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+  <path d="M226 168q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="메이크펀에듀 마스코트">
+  <defs>
+    <clipPath id="avatar-circle">
+      <circle cx="64" cy="64" r="62" />
+    </clipPath>
+  </defs>
+  <circle cx="64" cy="64" r="62" fill="#dceaff" />
+  <g clip-path="url(#avatar-circle)">
+    <path d="M64 66 C36 66 22 88 20 128 L108 128 C106 88 92 66 64 66 Z" fill="#2b3a55" />
+    <rect x="56" y="66" width="16" height="30" fill="#ffffff" />
+    <path d="M57 70 L64 84 L71 70 L68 66 L60 66 Z" fill="#c2410c" />
+    <circle cx="64" cy="42" r="26" fill="#f6c9a0" />
+    <path d="M38 42 C38 22 50 14 64 14 C78 14 90 22 90 42 C90 30 82 23 64 23 C46 23 38 30 38 42 Z" fill="#2b2420" />
+    <path d="M36 40 C33 40 31 44 32 48 C33 51 36 52 38 51 L38 40 Z" fill="#f6c9a0" />
+    <path d="M92 40 C95 40 97 44 96 48 C95 51 92 52 90 51 L90 40 Z" fill="#f6c9a0" />
+    <circle cx="52" cy="44" r="9" fill="none" stroke="#2b2420" stroke-width="3" />
+    <circle cx="76" cy="44" r="9" fill="none" stroke="#2b2420" stroke-width="3" />
+    <path d="M61 44 L67 44" stroke="#2b2420" stroke-width="3" />
+    <circle cx="52" cy="45" r="2.4" fill="#2b2420" />
+    <circle cx="76" cy="45" r="2.4" fill="#2b2420" />
+    <path d="M45 33 C49 29 56 28 60 30" stroke="#2b2420" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M68 30 C72 28 79 29 83 33" stroke="#2b2420" stroke-width="3" stroke-linecap="round" fill="none" />
+    <path d="M52 57 C57 62 71 62 76 57" stroke="#b4552d" stroke-width="3.4" stroke-linecap="round" fill="none" />
+  </g>
+  <circle cx="64" cy="64" r="61" fill="none" stroke="#ffffff" stroke-width="4" />
+</svg>

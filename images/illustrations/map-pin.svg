@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <!-- 지도 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="24" y="28" width="236" height="148" rx="14" fill="#f8fafc"/>
+  </g>
+  <!-- 강 -->
+  <path d="M24 92q40-18 78 0t78-8q30-10 80 4" fill="none" stroke="#7dd3fc" stroke-width="10" stroke-linecap="round"/>
+  <!-- 길 -->
+  <path d="M52 176q10-60 44-84t60-52" fill="none" stroke="#fcd34d" stroke-width="11" stroke-linecap="round"/>
+  <path d="M52 176q10-60 44-84t60-52" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-dasharray="7 8" stroke-linecap="round"/>
+  <!-- 블록 -->
+  <g stroke="#1e293b" stroke-width="3" stroke-linejoin="round">
+    <rect x="66" y="118" width="34" height="26" rx="5" fill="#d1fae5"/>
+    <rect x="150" y="120" width="30" height="24" rx="5" fill="#e0f2fe"/>
+    <rect x="120" y="152" width="30" height="24" rx="5" fill="#ede9fe"/>
+  </g>
+  <!-- 나무 -->
+  <g stroke="#1e293b" stroke-width="2.5">
+    <circle cx="218" cy="132" r="11" fill="#6ee7b7"/>
+    <line x1="218" y1="143" x2="218" y2="152" stroke-linecap="round"/>
+    <circle cx="238" cy="118" r="8" fill="#6ee7b7"/>
+  </g>
+  <!-- 경로 점선 -->
+  <path d="M70 158q50-8 120-44" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-dasharray="1 9" stroke-linecap="round"/>
+  <!-- 병원 핀 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M296 44a40 40 0 0 1 40 40c0 26-40 74-40 74s-40-48-40-74a40 40 0 0 1 40-40z" fill="#f43f5e"/>
+  </g>
+  <circle cx="296" cy="86" r="21" fill="#ffffff"/>
+  <g stroke="#f43f5e" stroke-width="6" stroke-linecap="round">
+    <path d="M296 76v20" fill="none"/>
+    <path d="M286 86h20" fill="none"/>
+  </g>
+  <!-- 반짝임 -->
+  <path d="M46 56q2 7 9 9-7 2-9 9-2-7-9-9 7-2 9-9z" fill="#fcd34d"/>
+  <path d="M340 152q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>

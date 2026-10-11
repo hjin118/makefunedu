@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-hidden="true">
+  <!-- 별 배경 -->
+  <g fill="#c4b5fd">
+    <circle cx="34" cy="36" r="3"/>
+    <circle cx="168" cy="28" r="3.5"/>
+    <circle cx="176" cy="86" r="2.5"/>
+    <circle cx="26" cy="96" r="2.5"/>
+  </g>
+  <!-- 적 UFO -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M100 34a24 24 0 0 1 24 22h-48a24 24 0 0 1 24-22z" fill="#c4b5fd"/>
+    <ellipse cx="100" cy="62" rx="36" ry="15" fill="#8b5cf6"/>
+  </g>
+  <g fill="#fcd34d" stroke="#1e293b" stroke-width="2.5">
+    <circle cx="78" cy="64" r="4"/>
+    <circle cx="100" cy="67" r="4"/>
+    <circle cx="122" cy="64" r="4"/>
+  </g>
+  <circle cx="92" cy="46" r="4" fill="#1e293b"/>
+  <circle cx="108" cy="46" r="4" fill="#1e293b"/>
+  <!-- 레이저 -->
+  <path d="M100 82v40" stroke="#f43f5e" stroke-width="6" stroke-linecap="round" stroke-dasharray="10 8"/>
+  <path d="M92 78q8 8 16 0l-4 12h-8z" fill="#fda4af" stroke="#1e293b" stroke-width="3" stroke-linejoin="round"/>
+  <!-- 우주선 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M100 132l22 26a30 30 0 0 1-44 0z" fill="#0ea5e9"/>
+    <path d="M78 156l-12 12 4-18zM122 156l12 12-4-18z" fill="#f43f5e"/>
+    <circle cx="100" cy="146" r="8" fill="#ffffff"/>
+  </g>
+  <!-- 불꽃 -->
+  <path d="M100 170q8 12 0 22-8-10 0-22z" fill="#f59e0b" stroke="#1e293b" stroke-width="3" stroke-linejoin="round"/>
+  <!-- 명중 폭발 -->
+  <path d="M64 84q2 7 9 9-7 2-9 9-2-7-9-9 7-2 9-9z" fill="#fcd34d"/>
+</svg>

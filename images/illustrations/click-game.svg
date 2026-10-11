@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-hidden="true">
+  <!-- 큰 버튼 -->
+  <ellipse cx="94" cy="132" rx="58" ry="40" fill="#0ea5e9" stroke="#1e293b" stroke-width="5"/>
+  <ellipse cx="94" cy="124" rx="44" ry="26" fill="#38bdf8" stroke="#1e293b" stroke-width="3.5"/>
+  <ellipse cx="82" cy="116" rx="14" ry="7" fill="#ffffff" opacity="0.7"/>
+  <!-- 누르는 모션 -->
+  <path d="M28 108a70 70 0 0 0 6 34" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M160 108a70 70 0 0 1-6 34" fill="none" stroke="#94a3b8" stroke-width="3.5" stroke-linecap="round"/>
+  <!-- 터지는 빛 -->
+  <g stroke="#f59e0b" stroke-width="4" stroke-linecap="round">
+    <path d="M94 52v-14" fill="none"/>
+    <path d="M52 66l-10-10" fill="none"/>
+    <path d="M136 66l10-10" fill="none"/>
+    <path d="M34 104H20" fill="none"/>
+    <path d="M154 104h14" fill="none"/>
+  </g>
+  <path d="M94 44q2 8 10 10-8 2-10 10-2-8-10-10 8-2 10-10z" fill="#fcd34d"/>
+  <!-- 커서 손 -->
+  <g stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round">
+    <path d="M148 122v-30a6 6 0 0 1 12 0v22l16 4a8 8 0 0 1 6 9l-3 17a12 12 0 0 1-12 10h-12a12 12 0 0 1-11-8l-6-16a6 6 0 0 1 10-8z" fill="#ffffff"/>
+  </g>
+  <path d="M154 104v10" stroke="#1e293b" stroke-width="2.5" stroke-linecap="round"/>
+</svg>

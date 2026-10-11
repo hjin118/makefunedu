@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 200" role="img" aria-hidden="true">
+  <!-- 신호등 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <rect x="52" y="26" width="66" height="136" rx="18" fill="#334155"/>
+    <circle cx="85" cy="62" r="17" fill="#f43f5e"/>
+    <circle cx="85" cy="98" r="17" fill="#fcd34d" opacity="0.45"/>
+    <circle cx="85" cy="134" r="17" fill="#6ee7b7" opacity="0.45"/>
+  </g>
+  <circle cx="85" cy="62" r="24" fill="none" stroke="#f43f5e" stroke-width="4" opacity="0.35"/>
+  <line x1="85" y1="162" x2="85" y2="186" stroke="#1e293b" stroke-width="5" stroke-linecap="round"/>
+  <!-- 미세먼지 점들 -->
+  <g fill="#94a3b8">
+    <circle cx="150" cy="52" r="5"/>
+    <circle cx="176" cy="38" r="3.5"/>
+    <circle cx="160" cy="80" r="4"/>
+    <circle cx="142" cy="112" r="3.5"/>
+    <circle cx="270" cy="46" r="5"/>
+    <circle cx="296" cy="36" r="3.5"/>
+    <circle cx="316" cy="92" r="4"/>
+  </g>
+  <!-- 마스크 쓴 친구 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <circle cx="222" cy="92" r="34" fill="#fcd34d"/>
+    <path d="M190 78a34 34 0 0 1 60-8c4 6-2 10-8 8-16-5-38-4-46 4-4 4-8 2-6-4z" fill="#1e293b"/>
+    <rect x="200" y="94" width="44" height="26" rx="12" fill="#7dd3fc"/>
+  </g>
+  <circle cx="210" cy="86" r="3.5" fill="#1e293b"/>
+  <circle cx="236" cy="86" r="3.5" fill="#1e293b"/>
+  <path d="M198 106q22 10 48 0" fill="none" stroke="#0ea5e9" stroke-width="2.5" stroke-linecap="round" opacity="0.7"/>
+  <!-- 몸 -->
+  <g stroke="#1e293b" stroke-width="4" stroke-linejoin="round">
+    <path d="M198 126h48l10 52h-68z" fill="#8b5cf6"/>
+    <path d="M196 132l-16 14" fill="none" stroke-linecap="round"/>
+    <path d="M248 132l16 14" fill="none" stroke-linecap="round"/>
+  </g>
+  <!-- PM2.5 칩 -->
+  <rect x="272" y="60" width="66" height="26" rx="13" fill="#ffe4e6" stroke="#f43f5e" stroke-width="2.5"/>
+  <text x="305" y="78" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#f43f5e">PM2.5</text>
+  <!-- 반짝임 -->
+  <path d="M140 152q2 7 9 9-7 2-9 9-2-7-9-9 7-2 9-9z" fill="#7dd3fc"/>
+  <path d="M322 142q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#fcd34d"/>
+</svg>

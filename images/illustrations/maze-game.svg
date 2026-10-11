@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-hidden="true">
+  <!-- 미로 틀 -->
+  <rect x="28" y="28" width="144" height="144" rx="12" fill="#f8fafc" stroke="#1e293b" stroke-width="5"/>
+  <!-- 미로 벽 -->
+  <g stroke="#334155" stroke-width="7" stroke-linecap="round">
+    <path d="M64 28v44" fill="none"/>
+    <path d="M28 108h40" fill="none"/>
+    <path d="M104 28v40" fill="none"/>
+    <path d="M104 68h68" fill="none"/>
+    <path d="M136 68v44" fill="none"/>
+    <path d="M64 108v40" fill="none"/>
+    <path d="M100 108h36" fill="none"/>
+    <path d="M136 148v24" fill="none"/>
+    <path d="M64 148h36" fill="none"/>
+  </g>
+  <!-- 출구 열림 -->
+  <path d="M172 128v28" stroke="#f8fafc" stroke-width="9" stroke-linecap="round"/>
+  <!-- 플레이어 -->
+  <circle cx="46" cy="46" r="9" fill="#0ea5e9" stroke="#1e293b" stroke-width="3.5"/>
+  <path d="M56 66q4 10 0 18" fill="none" stroke="#94a3b8" stroke-width="3" stroke-dasharray="2 6" stroke-linecap="round"/>
+  <!-- 출구 깃발 -->
+  <g stroke="#1e293b" stroke-width="3.5" stroke-linecap="round">
+    <path d="M178 158v-34" fill="none"/>
+  </g>
+  <path d="M178 124l-22 8 22 8z" fill="#f59e0b" stroke="#1e293b" stroke-width="3.5" stroke-linejoin="round"/>
+  <circle cx="170" cy="164" r="4" fill="#10b981"/>
+  <!-- 반짝임 -->
+  <path d="M92 138q2 7 9 9-7 2-9 9-2-7-9-9 7-2 9-9z" fill="#fcd34d"/>
+  <path d="M46 148q1.5 6 7.5 7.5-6 1.5-7.5 7.5-1.5-6-7.5-7.5 6-1.5 7.5-7.5z" fill="#7dd3fc"/>
+</svg>
