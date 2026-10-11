@@ -9,6 +9,7 @@ import {
   CONCEPT_CARDS,
   FREE_PROMPTS,
   KEY_PROMPTS,
+  MAP_API_CARDS,
   NEIS_ROWS,
   SECTION_NAV,
 } from "./data";
@@ -92,7 +93,7 @@ export default function PublicDataPage() {
             공공 API를 호출해 웹 대시보드를 직접 만들어 봐요. Open-Meteo·PokeAPI·나이스 NEIS처럼{" "}
             <strong>API 키 없이</strong> 바로 쓰는 방법과, 에어코리아처럼{" "}
             <strong>API 키를 발급받아</strong> 확장하는 방법 두 가지로 나눠 배워요. AI에게 복사하는 실습
-            프롬프트 6종이 담긴 정보·과학 수업자료예요.
+            프롬프트 8종이 담긴 정보·과학 수업자료예요.
           </>
         }
       />
@@ -265,7 +266,7 @@ export default function PublicDataPage() {
         id="key"
         no="④"
         title="API 키를 사용하는 경우 — 에어코리아 확장"
-        intro="공공데이터포털(data.go.kr) 회원가입 → 마이페이지에서 API 키(서비스키) 발급 → URL 뒤에 ?ServiceKey=키 형태로 붙여 호출해요. 기본은 무료 Open-Meteo로 실행하고, 에어코리아 API 키를 연결하면 확장되는 실습이에요."
+        intro="네이버 클라우드 플랫폼·Google Cloud Console·공공데이터포털(data.go.kr)에서 API 키(서비스키·Client ID)를 발급받아 호출해요. 키가 있으면 더 많은 데이터·더 높은 호출 한도를 쓸 수 있어요."
       >
         <h3>에어코리아(한국환경공단)</h3>
         <div className="card">
@@ -276,10 +277,38 @@ export default function PublicDataPage() {
           </p>
         </div>
 
+        <h3>지도 API — 네이버·구글로 위치 서비스 만들기</h3>
+        <p className="page-intro">
+          병원·약국처럼 위치가 담긴 데이터는 지도 API로 보여 주면 한눈에 이해돼요. 발급 방법과 호출
+          주소를 먼저 살펴 봐요.
+        </p>
+        <div className="grid-2">
+          {MAP_API_CARDS.map((card) => (
+            <div className="card" key={card.title}>
+              <h4>{card.title}</h4>
+              <table className="simple">
+                <tbody>
+                  {card.rows.map(([label, desc]) => (
+                    <tr key={label}>
+                      <th scope="row">{label}</th>
+                      <td>{desc}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </div>
+
+        <Note tone="warn" title="⚠ API 키 관리 수칙">
+          API 키는 도난 방지를 위해 반드시 <strong>도메인(웹사이트) 제한</strong>을 설정하고, 코드에
+          넣기 전까지는 메모장 등에 따로 보관해요.
+        </Note>
+
         <h3>실습 — AI에게 복사해 주세요</h3>
         <p className="page-intro">
-          프롬프트 5는 무료 Open-Meteo 기본 동작에 에어코리아 API 키 확장 모드를 얹어요. 역시 전문을
-          그대로 복사해 주세요.
+          아래 프롬프트를 그대로 복사해 AI에게 붙여 넣으면 지도 기반 단일 HTML 웹 앱이 완성돼요. 코드
+          속 <code>YOUR_...</code> 키 자리는 발급받은 키로 바꿔 넣어 주세요.
         </p>
         {KEY_PROMPTS.map((prompt) => (
           <PromptBlock key={prompt.id} prompt={prompt} />

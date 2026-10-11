@@ -182,7 +182,7 @@ export const FREE_PROMPTS: PromptItem[] = [
   },
   {
     id: "lunch",
-    no: "6",
+    no: "5",
     title: "우리학교 급식자랑 대시보드",
     subtitle: "나이스 API — KEY 선택(없어도 호출 가능)",
     lines: [
@@ -195,12 +195,68 @@ export const FREE_PROMPTS: PromptItem[] = [
   },
 ];
 
+/* ---------- ④ API 키를 사용하는 경우 — 지도 API 개념 ---------- */
+
+export type MapApiCard = {
+  title: string;
+  rows: Array<[string, string]>;
+};
+
+export const MAP_API_CARDS: MapApiCard[] = [
+  {
+    title: "네이버 지도 API (NAVER Maps)",
+    rows: [
+      ["기능", "지도 표시·마커·정보창 제어"],
+      ["발급 방법", "네이버 클라우드 플랫폼 콘솔 → Maps 서비스 신청 → Application 등록 후 Client ID 발급"],
+      ["사용법", "maps.js 로드 주소 뒤에 ?ncpClientId=발급받은_ID를 붙여 호출"],
+      ["참고", "연간 무료 크레딧 제공(교육용으로 충분)"],
+    ],
+  },
+  {
+    title: "구글 지도 API (Google Maps JavaScript API)",
+    rows: [
+      ["기능", "지도 표시·마커·경로·장소 검색"],
+      ["발급 방법", "Google Cloud Console(console.cloud.google.com)에서 프로젝트 생성 → Maps JavaScript API 사용 설정 → API 키 생성"],
+      ["사용법", "maps.googleapis.com/maps/api/js?key=발급받은_키"],
+      ["참고", "월간 무료 제공량이 넉넉하며, 도난 방지를 위해 API 키에 웹사이트 제한을 걸어야 해요."],
+    ],
+  },
+];
+
 export const KEY_PROMPTS: PromptItem[] = [
   {
+    id: "hospital",
+    no: "6",
+    title: "우리 동네 병원 위치 지도 — 네이버 지도 API",
+    subtitle: "네이버 지도 API(NAVER Maps) — Client ID 발급",
+    lines: [
+      "[역할 정의] 너는 위치 기반 서비스(LBS)를 전문으로 하는 프런트엔드 개발자이자 UI/UX 디자이너야.",
+      "[목표] 네이버 지도 API(NAVER Maps)를 연동하여 우리 동네 병원들의 위치를 지도 위 마커로 표시하고, 마커를 클릭하면 병원 정보를 볼 수 있는 단일 파일 웹 애플리케이션(index.html)을 제작해 줘.",
+      "[사전 준비 — API 키 발급 방법] 1. 네이버 클라우드 플랫폼(ncp) 회원가입 2. 콘솔 → Services → AI·NAVER API → Maps 신청 3. Application 등록 후 Client ID와 Client Secret 확인 / 인증 실패 방지를 위해 웹 서비스 URL에 http://localhost:8080 또는 사용할 도메인을 등록.",
+      "[기술 스택] 순수 HTML5, CSS3, 바닐라 JavaScript, NAVER Maps API v3 (네이버 클라우드 플랫폼).",
+      "[핵심 기능 요구사항] 1. 전체 화면 지도: 부산 동래구 중심(위도 35.190, 경도 129.081)으로 지도를 표시하고 확대·축소 컨트롤을 활성화한다. 2. 병원 마커: 병원 목록(이름, 위도, 경도, 진료 과목)을 배열에 담아 지도 위에 마커로 표시한다(예시 병원 5개 이상). 3. 정보창(InfoWindow): 마커를 클릭하면 병원 이름·주소·전화번호가 담긴 정보창이 열리고 다른 곳을 클릭하면 닫힌다. 4. 마커 클릭 시 해당 병원을 지도 중심으로 부드럽게 이동한다.",
+      '[출력 형식] API 키 자리에는 "YOUR_NAVER_CLIENT_ID" 문자열을 넣어 두고, 코드 위쪽에 "여기에 Client ID를 넣으세요"라는 한글 주석을 표시해 줘. 누락 없이 그대로 복사하여 사용할 수 있는 완성된 단일 index.html 코드로 출력해 줘.',
+    ],
+  },
+  {
+    id: "pharmacy",
+    no: "7",
+    title: "우리 동네 약국 찾기 지도 — 구글 지도 API",
+    subtitle: "구글 지도 API — API 키 발급",
+    lines: [
+      "[역할 정의] 너는 위치 기반 서비스(LBS)를 전문으로 하는 프런트엔드 개발자야.",
+      "[목표] Google Maps JavaScript API를 연동하여 우리 동네 약국들의 위치를 마커로 표시하고, 클릭 시 약국 정보를 보여 주는 단일 파일 웹 애플리케이션(index.html)을 제작해 줘.",
+      "[사전 준비 — API 키 발급 방법] 1. Google Cloud Console(console.cloud.google.com) 접속 후 프로젝트 생성 2. API 및 서비스 → Maps JavaScript API 사용 설정 3. 사용자 인증 정보 → API 키 생성 / 도난 방지를 위해 웹사이트 제한에 사용할 도메인을 등록해 두세요.",
+      "[기술 스택] 순수 HTML5, CSS3, 바닐라 JavaScript, Google Maps JavaScript API.",
+      "[핵심 기능 요구사항] 1. 전체 화면 지도: 우리 동네 중심 좌표로 지도를 표시한다. 2. 약국 마커: 약국 목록(이름, 위도, 경도, 전화번호)을 배열에 담아 마커로 표시한다(예시 약국 5개 이상). 3. 정보창: 마커를 클릭하면 약국 이름·주소·전화번호가 담긴 정보창이 열린다. 4. 목록 사이드바: 화면 왼쪽에 약국 목록을 출력하고, 목록을 클릭하면 해당 약국 마커로 지도가 이동하며 정보창이 열린다.",
+      '[출력 형식] API 키 자리에는 "YOUR_GOOGLE_MAPS_API_KEY" 문자열을 넣어 두고, 코드 위쪽에 "여기에 API 키를 넣으세요"라는 한글 주석을 표시해 줘. 누락 없이 그대로 복사하여 사용할 수 있는 완성된 단일 index.html 코드로 출력해 줘.',
+    ],
+  },
+  {
     id: "trafficlight",
-    no: "5",
+    no: "8",
     title: "실시간 도시 대기오염(미세먼지) 스마트 신호등 대시보드",
-    subtitle: "키 발급 불필요 기본 + API 키 확장 모드",
+    subtitle: "에어코리아 API 키 확장 모드 포함 — 기본은 무료 Open-Meteo로도 실행 가능",
     lines: [
       "너는 환경 데이터 모니터링 시스템을 구축하는 IoT 및 스마트시티 대시보드 설계자야. 실시간 대기질 API를 호출하여 미세먼지(PM10)·초미세먼지(PM2.5)·대기질 지수를 학교 교실 안의 스마트 안전 전광판 형태로 표현하는 단일 웹 애플리케이션(index.html)을 제작해 줘.",
       "[기술 스택] 순수 HTML5, Tailwind CSS (CDN), Lucide Icons (CDN), 바닐라 JavaScript.",
