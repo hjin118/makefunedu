@@ -189,6 +189,27 @@ const RESOURCES: ResourceCard[] = [
     },
   },
   {
+    tag: "정보·과학 융합 · 단원별 학습",
+    title: "공공데이터 활용",
+    short:
+      "무료 API·API 키·Open-Meteo·나이스 급식으로 공공 API 웹 대시보드를 만들어요. 복사해서 쓰는 AI 실습 프롬프트 6종.",
+    cta: "공공데이터 배우러 가기 →",
+    to: "/data",
+    tile: {
+      from: "#34d399",
+      to: "#0f766e",
+      glyph: (
+        <>
+          <circle cx="12" cy="12" r="3" />
+          <path d="M12 2v4" />
+          <path d="M12 18v4" />
+          <path d="M2 12h4" />
+          <path d="M18 12h4" />
+        </>
+      ),
+    },
+  },
+  {
     tag: "고등 진로선택 · 단원별 학습",
     title: "인공지능 수학",
     short:

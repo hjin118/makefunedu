@@ -19,6 +19,7 @@ const ROUTES = [
   "/coding",
   "/esp32",
   "/microbit",
+  "/data",
 ];
 
 function siteUrl() {

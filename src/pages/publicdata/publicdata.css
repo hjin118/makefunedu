@@ -1,0 +1,132 @@
+/* 공공데이터 활용 — 확장 스타일 (전역 토큰 재사용) */
+
+/* ---- 스티키 섹션 내비 ---- */
+
+.pd-nav {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  background: var(--bg);
+  border-bottom: 1px solid var(--card-border);
+  padding: 10px 0;
+  margin-bottom: 8px;
+  scrollbar-width: thin;
+}
+
+.pd-nav a {
+  flex-shrink: 0;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--text-sub);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.pd-nav a:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  text-decoration: none;
+}
+
+.pd-nav a span {
+  margin-right: 2px;
+}
+
+/* ---- 섹션 공통 ---- */
+
+.pd-section {
+  scroll-margin-top: 76px;
+}
+
+.pd-section h3 {
+  margin-top: 28px;
+}
+
+.pd-sec-no {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 30px;
+  margin-right: 10px;
+  font-size: 15px;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 10px;
+  transform: translateY(-2px);
+}
+
+/* ---- 안내 박스 ---- */
+
+.pd-note {
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin: 16px 0;
+  background: var(--card-bg);
+}
+
+.pd-note > strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.pd-note > div {
+  color: var(--text-sub);
+}
+
+.pd-note.is-warn {
+  border-left-color: var(--warn);
+  background: var(--warn-soft);
+}
+
+.pd-note.is-warn > div {
+  color: var(--text);
+}
+
+.pd-note.is-ok {
+  border-left-color: var(--ok);
+  background: var(--ok-soft);
+}
+
+.pd-note.is-ok > div {
+  color: var(--text);
+}
+
+/* ---- API 키 비교표 ---- */
+
+.pd-compare th:first-child,
+.pd-compare td:first-child {
+  width: 104px;
+  white-space: nowrap;
+}
+
+/* ---- 실습 프롬프트 ---- */
+
+.pd-prompt-unit {
+  margin-top: 18px;
+}
+
+.pd-prompt-head-sub {
+  display: inline-block;
+  margin-left: 8px;
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--accent);
+  background: var(--accent-weak);
+  border-radius: 999px;
+  padding: 2px 10px;
+  transform: translateY(-1px);
+}
+
+.pd-prompt-box {
+  margin-top: 10px;
+}
